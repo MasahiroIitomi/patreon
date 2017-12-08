@@ -51,4 +51,5 @@ production:
   <<: *default
   database: patreon_production
   username: patreon
-  password: <%= ENV['PATREON_DATABASE_PASSWORD'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
