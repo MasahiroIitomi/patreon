@@ -7,4 +7,61 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      =link_to "#", class: "header-logo" do
+        .header-left
+          .logo PATREON
+      .header-right
+        .header-right__links
+          %ul.header-right__links
+            %li
+              =link_to "Log In", "#"
+            %li
+              =link_to "Sign Up", "#"
+            %li
+              =link_to "Explore Creator", "#"
+            %li
+              =link_to "Start My Page", "#"
+        .search-box
+
     = yield
+
+    %footer
+      .row
+        .content.left
+          .logo=link_to "PATREON", "#"
+        .content.left-center
+          %ul
+            %li=link_to "About", "#"
+            %li=link_to "Careers", "#"
+            %li=link_to "Create on Patreon", "#"
+            %li=link_to "Brand", "#"
+            %li=link_to "Press", "#"
+            %li=link_to "Partners", "#"
+            %li=link_to "Sitemap", "#"
+        .content.right-center
+          %ul
+            %li=link_to "Help Center & FAQs", "#"
+            %li=link_to "Developers", "#"
+            %li=link_to "App Directory", "#"
+            %li=link_to "Creator Blog", "#"
+            %li=link_to "Creator Guides", "#"
+            %li=link_to "Community Guidelines", "#"
+            %li=link_to "Terms of Use", "#"
+            %li=link_to "Privacy Policy", "#"
+        .content.right
+          .sns-links
+            %ul
+              %li
+                =link_to "https://twitter.com/patreon" do
+                  =fa_icon "twitter"
+              %li
+                =link_to "https://www.facebook.com/patreon" do
+                  =fa_icon "facebook"
+              %li
+                =link_to "https://instagram.com/patreon" do
+                  =fa_icon "instagram"
+          .clear
+          .google-install
+          .App-install
+          %h2 © 2017 Patreon, Inc.
