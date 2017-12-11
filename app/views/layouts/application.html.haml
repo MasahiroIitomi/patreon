@@ -8,16 +8,16 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      =link_to "#", class: "header-logo" do
+      =link_to root_path, class: "header-logo" do
         .header-left
           .logo PATREON
       .header-right
         .header-right__links
           %ul.header-right__links
             %li
-              =link_to "Log In", "#"
+              =link_to "Log In", new_user_session_path
             %li
-              =link_to "Sign Up", "#"
+              =link_to "Sign Up", new_user_registration_path
             %li
               =link_to "Explore Creator", "#"
             %li
@@ -29,7 +29,7 @@
     %footer
       .row
         .content.left
-          .logo=link_to "PATREON", "#"
+          .logo=link_to "PATREON", root_path
         .content.left-center
           %ul
             %li=link_to "About", "#"
