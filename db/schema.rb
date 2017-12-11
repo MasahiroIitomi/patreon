@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20171211012703) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+    t.string   "name"
     t.text     "mypage_url",             limit: 65535
     t.text     "about_user",             limit: 65535
     t.string   "location"

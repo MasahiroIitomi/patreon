@@ -1,5 +1,6 @@
 class AddMypageUrlToUsers < ActiveRecord::Migration[5.0]
   def change
+    add_column :users, :name, :string
     add_column :users, :mypage_url, :text
     add_column :users, :about_user, :text
     add_column :users, :location, :string
