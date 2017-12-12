@@ -14,15 +14,27 @@
       .header-right
         .header-right__links
           %ul.header-right__links
-            %li
-              =link_to "Log In", new_user_session_path
-            %li
-              =link_to "Sign Up", new_user_registration_path
-            %li
-              =link_to "Explore Creator", "#"
-            %li
-              =link_to "Start My Page", "#"
+            - if user_signed_in?
+              %li
+                .icon=fa_icon "bars"
+              %li
+                = link_to home_path do
+                  .icon=fa_icon "home"
+            -else
+              %li
+                =link_to "Log In", new_user_session_path
+              %li
+                =link_to "Sign Up", new_user_registration_path
+              %li
+                =link_to "Explore Creator", "#"
+              %li
+                =link_to "Start My Page", "#"
         .search-box
+    -if user_signed_in?
+      .menu-modal
+        %ul
+          =link_to destroy_user_session_path, method: :delete, class: "modal-link" do
+            %li LOG OUT
 
     = yield
 
