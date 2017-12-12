@@ -16,7 +16,7 @@
           %ul.header-right__links
             - if user_signed_in?
               %li
-                .icon=fa_icon "bars"
+                .icon#modal-icon=fa_icon "bars"
               %li
                 = link_to home_path do
                   .icon=fa_icon "home"
@@ -33,6 +33,12 @@
     -if user_signed_in?
       .menu-modal
         %ul
+          =link_to "#", class: "modal-link" do
+            %li EXPLORE CREATORS
+          =link_to "#", class: "modal-link" do
+            %li YOUR PLEDGES
+          =link_to "#", class: "modal-link" do
+            %li HELP CENTER
           =link_to destroy_user_session_path, method: :delete, class: "modal-link" do
             %li LOG OUT
 

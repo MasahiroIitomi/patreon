@@ -71,22 +71,31 @@ header{
   position:absolute;
   top:48px;
   right:0;
+  display:none;
+  border:2px solid $patreonborder;
     a {
       color:$patreonnavy;
       &:link {
         text-decoration:none;
       }
       li {
-        font-size:0.9rem;
+        font-size:0.8rem;
         font-weight:bold;
-        height:36px;
-        width:180px;
-        text-align:center;
+        height:18px;
+        width:160px;
+        padding:12px;
+        text-align:left;
         background-color:white;
-        line-height:36px;
-        border:2px solid $patreongray;
+        line-height:18px;
+        &:hover {
+          background-color:$patreongray;
+        }
       }
     }
+}
+
+.show{
+  display:block;
 }
 
 .top-wrapper {
