@@ -1,0 +1,90 @@
+.sidebar
+  =link_to "#", class: "side-icons" do
+    .avatar.icons
+      =fa_icon "smile-o"
+  =link_to "#", class: "side-icons" do
+    .post.icons
+      =fa_icon "pencil-square-o"
+  =link_to "#", class: "side-icons" do
+    .patrons.icons
+      =fa_icon "users"
+  =link_to "#", class: "side-icons" do
+    .notification.icons
+      =fa_icon "bell-o"
+  =link_to "#", class: "side-icons" do
+    .messages.icons
+      =fa_icon "commenting-o"
+  =link_to "#", class: "side-icons" do
+    .invite_creators.icons
+      =fa_icon "paper-plane-o"
+  =link_to "#", class: "side-icons" do
+    .settings.icons
+      =fa_icon "cog"
+
+.user-main-contents
+  .user-main-contents__wrapper
+    .inner-container
+
+      .left-contents
+        .user
+          .user__image
+            .user__image__avatar
+          .user__info
+            %h3=current_user.name
+            %p is creating music
+          .user__supporting
+            .title
+              %h3 SUPPORTING
+            .supporting-creator
+              .avatar
+              .creator-info
+                .creator-name
+                  %h4 Creator's name
+                .pledge-info
+                  %p $10 per creation
+          .user__following
+            .title
+              %h3 FOLLOWING
+            .following-creators
+              .avatar
+              .creator-name
+                %h4 Creator's name
+
+      .center-contents
+        .center-contents__header
+          .tab-all All posts
+          .tab-patron-only Patron-only posts
+          .tab-select
+
+        .center-contents__posts
+          .post
+            .post-wrapper
+              .header
+                .avatar
+                .creator-info
+                  .creator-name
+                    %h4 Creator's name
+                  .post-time
+                    %p Nov 21 at 10:10am
+                .public
+                  %p public
+              .content
+                .post-title
+                  %h4 Post Title
+                .post-body
+                  hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge
+                .content-bottom
+                  .likes-count
+                  .share-btn
+                  .like-btn
+
+      .right-contents
+        .find-creators
+          .find-creators-wrapper
+            .title
+              %h5 FIND CREATORS YOU LOVE
+            .content
+              %p The creators you already love may be on Patreon – connect your social media to find them.
+            =link_to "#" do
+              .link FIND CREATORS
+      .clear
