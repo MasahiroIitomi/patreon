@@ -2,17 +2,20 @@
 @import "./config/variable";
 @import "./mixin/mixin";
 @import "font-awesome";
+@import "users";
+@import "user_home";
 
 header{
   background-color: white;
   height:48px;
+  border-bottom: 2px solid $patreonborder;
   a {
     display:block;
     &:link{
       text-decoration:none;
     }
     .header-left{
-      height:48px;
+      height:34px;
       width:120px;
       padding:7px 15px;
       display:inline-block;
@@ -44,6 +47,13 @@ header{
           font-family: 'America',sans-serif;
           float:right;
           margin:0 14px;
+          .icon {
+            font-size:25px;
+            &:hover {
+              cursor:pointer;
+              opacity:0.5;
+            }
+          }
           a{
             color:$patreonnavy;
             font-size:0.8rem;
@@ -55,6 +65,37 @@ header{
       }
     }
   }
+}
+
+.menu-modal{
+  position:absolute;
+  top:48px;
+  right:0;
+  display:none;
+  border:2px solid $patreonborder;
+    a {
+      color:$patreonnavy;
+      &:link {
+        text-decoration:none;
+      }
+      li {
+        font-size:0.8rem;
+        font-weight:bold;
+        height:18px;
+        width:160px;
+        padding:12px;
+        text-align:left;
+        background-color:white;
+        line-height:18px;
+        &:hover {
+          background-color:$patreongray;
+        }
+      }
+    }
+}
+
+.show{
+  display:block;
 }
 
 .top-wrapper {

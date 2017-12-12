@@ -1,0 +1,72 @@
+.user_administration_wrapper {
+  background-color: $patreongray;
+  color:$patreonnavy;
+  text-align:center;
+  h2{
+    font-size: 1.3rem;
+    font-weight:700;
+    padding:1.2em;
+  }
+  .content {
+    background-color:white;
+    width:464px;
+    margin: 0 auto;
+    padding:24px;
+    .field{
+      width:100%;
+      text-align:left;
+      height:45px;
+      margin-top:8px;
+      &__icon {
+        display:inline-block;
+        width:25px;
+        font-size:16px;
+        color:gray;
+      }
+      &__form {
+        width:calc(100% - 45px);
+        font-size:1rem;
+        margin-left: 10px;
+        line-height: normal;
+        display:inline-block;
+        border-bottom: 2px solid $patreongray;
+        color:$patreongray;
+        input {
+          width:100%;
+          padding:8px 0;
+          height:19px;
+          border:none;
+          color:$patreonnavy;
+          font-weight: normal;
+        }
+      }
+    }
+    .link-signup{
+      height:55px;
+      margin:16px auto;
+      width:100%;
+      background-color:$patreonorange;
+      color:white;
+      font-weight:700;
+    }
+    .link-login {
+      height:55px;
+      margin:0 auto;
+      width:100%;
+      color:$patreonorange;
+      line-height:55px;
+      color:$patreonnavy;
+      a{
+        color:$patreonorange;
+        font-weight:700;
+        &:link{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .empty-background {
+    height:45px;
+  }
+}

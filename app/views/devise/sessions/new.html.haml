@@ -1,0 +1,21 @@
+.user_administration_wrapper
+  %h2 Log in
+  .content
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        .field__icon
+          =fa_icon "envelope"
+        .field__form
+          = f.email_field :email, autofocus: true, placeholder:"Email"
+      .field
+        .field__icon
+          = fa_icon "key"
+        .field__form
+          = f.password_field :password, autocomplete: "off", placeholder:"Password"
+      / = render "devise/shared/links"
+      .link
+        = f.submit "LOG IN" ,class: "link-signup"
+      .link-login
+        New to Patreon?
+        = link_to "Sign Up", new_user_registration_path, class: "login-btn"
+  .empty-background
