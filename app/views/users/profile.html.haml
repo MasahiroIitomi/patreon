@@ -1,0 +1,87 @@
+.background
+  =render partial: "sidebar"
+  =render partial: "setting_sidebar"
+
+  .profile
+    .content
+      = form_for(current_user) do |f|
+        .setting-article
+          .left-term Avatar
+          .right-content
+            .avator-image
+            .image-btn
+              =f.label :avatar_image, "CHOOSE NEW IMAGE"
+              =f.file_field :avatar_image
+            =link_to "Remove image", "#", class: "remove-image-link"
+
+        .setting-article
+          .left-term Name
+          .right-content
+            = f.text_field :name, autofocus: true
+        .setting-article
+          .left-term Email
+          .right-content
+            = f.email_field :email
+        .setting-article
+          .left-term Creator Page
+          .right-content
+            =link_to "#", class: "creator-btn" do
+              .btn
+                EDIT PAGE DETAIL
+              .revert-link
+                =link_to "#" do
+                  Revert my account to patron-only
+        .setting-article
+          .left-term Patreon URL
+          .right-content
+            .patreon-url patreon.com/
+            .mypage-url
+              =f.text_field :mypage_url, placeholder: "username"
+        .setting-article
+          .left-term About You
+          .right-text-area
+            = f.text_area :about_user, rows: 10, placeholder: "Info about you"
+        .setting-article
+          .left-term Location
+          .right-content
+            = f.text_field :location, placeholder: "Where are you from?"
+        .setting-article
+          .left-term Links
+          .right-content-links
+            %ul.links
+              %li
+                .icon
+                  =fa_icon "twitter"
+                .link-url
+                  =f.url_field :twitter_url, placeholder: "Your Twitter URL"
+              .clear
+              %li
+                .icon
+                  =fa_icon "facebook"
+                .link-url
+                  =f.url_field :facebook_url, placeholder: "Your Facebook URL"
+              .clear
+              %li
+                .icon
+                  =fa_icon "youtube"
+                .link-url
+                  = f.url_field :youtube_url, placeholder: "Your YouTube URL"
+              .clear
+              %li
+                .icon
+                  =fa_icon "twitch"
+                .link-url
+                  =f.url_field :twitch_url, placeholder: "Your Twetch URL"
+              .clear
+        .setting-article
+          .left-term Pledge Privacy
+          .right-content
+            .pledge-box
+              =f.check_box :pledge_privacy, class: "pledge-check", value: "aaa"
+            .pledge-comment
+              My pledges are publicly visible
+        .save-btn
+          = f.submit "SAVE CHANGES", class: "profile-save-btn"
+      .clear
+
+
