@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211012703) do
+ActiveRecord::Schema.define(version: 20171213044557) do
+
+  create_table "creators", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "creating_things", null: false
+    t.string   "is_or_are"
+    t.string   "cover_image"
+    t.integer  "genre"
+    t.integer  "adult_content"
+    t.integer  "reward_id"
+    t.integer  "earning_privacy"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
@@ -30,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171211012703) do
     t.text     "about_user",             limit: 65535
     t.string   "location"
     t.string   "avatar_image"
-    t.boolean  "pledge_privacy"
+    t.integer  "pledge_privacy"
     t.text     "twitter_url",            limit: 65535
     t.text     "facebook_url",           limit: 65535
     t.text     "youtube_url",            limit: 65535
