@@ -1,0 +1,17 @@
+.create-page-back
+  .contents-wrapper
+    .content
+      .content__left
+        = form_for(current_user) do |f|
+          .content__left-title
+            %h3 Hi there! Just to make sure, is this the name you want displayed on your page?
+          .content__left-form
+            = f.text_field :name, autofocus: true
+          .content__left-submit
+            = f.submit "OK"
+      .content__right
+        .content__right-icon
+          =fa_icon "lightbulb-o"
+        .content__right-guide
+          What do your fans call you? You can always change this later.
+=render partial: "layouts/footer"

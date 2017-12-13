@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "top#home"
   get "home"             => "users#home"
   get "settings/profile" => "users#profile"
+  get "create/1" => "creators#create_name"
 
   resources :users, only: [:update]
 end
