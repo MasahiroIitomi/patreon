@@ -7,6 +7,14 @@ class UsersController < ApplicationController
   def profile
   end
 
+  def update
+    if current_user.update(user_params)
+      redirect_to home_path
+    else
+      render :profile
+    end
+  end
+
   def move_to_top
     redirect_to root_path unless user_signed_in?
   end
