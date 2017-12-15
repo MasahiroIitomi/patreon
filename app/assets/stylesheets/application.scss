@@ -4,8 +4,19 @@
 @import "font-awesome";
 @import "users";
 @import "user_home";
+@import "user_setting_sidebar";
+@import "user_setting";
+@import "creator_createpage";
+@import "creators";
+// * {
+//   box-sizing:border-box;
+// }
 
 header{
+  position:fixed;
+  top:0px;
+  z-index:10;
+  width:100%;
   background-color: white;
   height:48px;
   border-bottom: 2px solid $patreonborder;
@@ -99,6 +110,7 @@ header{
 }
 
 .top-wrapper {
+  margin-top:50px;
   height:507px;
   background-color: $patreonnavy;
   background-image: url(https://cdn5.patreon.com/external/landing_pages/images/heroes/index_hero@2x.jpg);
@@ -365,8 +377,10 @@ header{
 
 footer{
   height:464px;
+  background-color:white;
+  margin-top:30px;
   .row{
-    width:1024px;
+    max-width:1024px;
     height:352;
     margin:0 auto;
     padding:64px 64px 48px 64px;

@@ -1,0 +1,196 @@
+.profile {
+  width:calc(100% - 236px);
+  margin-left:236px;
+  margin-top:50px;
+  background-color:$patreongray;
+  box-sizing:border-box;
+  padding:32px 16px 16px 16px;
+  color:$patreonnavy;
+  .content {
+    background-color:white;
+    padding:40px;
+    margin:0 auto;
+    max-width: 800px;
+    .setting-article {
+      // height:48px;
+      margin-bottom:48px;
+      display:block;
+      @include clearfix;
+
+      .left-term {
+        // height:48px;
+        float:left;
+        margin-right:32px;
+        width:116px;
+        height:48px;
+        text-align:right;
+        font-weight:bold;
+        line-height:48px;
+        display:inline-block;
+      }
+      .right-content {
+        float:left;
+        display:inline-block;
+        width:calc(100% - 148px);
+        line-height:48px;
+        height:48px;
+        font-weight:100;
+
+        .avatar-image {
+        }
+
+        .image-btn {
+          display:inline-block;
+          color:white;
+          font-weight:bold;
+          font-size:0.8rem;
+          float:left;
+          height:48px;
+          line-height:48px;
+          padding-right:10px;
+            label {
+              padding:8px 12px;
+              background-color:$patreonorange;
+              height:16px;
+              line-height:16px;
+              cursor:pointer;
+            }
+            input{
+              display:none;
+            }
+        }
+        .remove-image-link {
+          color:$patreonorange;
+          font-weight:bold;
+          &:link {
+            text-decoration:none;
+          }
+        }
+
+        .creator-btn {
+          color:white;
+          font-weight:bold;
+          font-size:0.8rem;
+          float:left;
+          padding-right:10px;
+          &:link{
+            text-decoration:none;
+          }
+        }
+        .btn {
+          display:inline-block;
+          background-color:$patreonorange;
+          padding:8px 12px;
+          height:16px;
+          line-height:16px;
+        }
+
+        .revert-link {
+          float:left;
+          display:inline-block;
+          a {
+            color:$patreonorange;
+            font-weight:bold;
+            &:link{
+            text-decoration:none;
+            }
+          }
+        }
+
+        input {
+          width:100%;
+          border:none;
+          border-bottom: 2px solid $patreonborder;
+          color:$patreonnavy;
+        }
+
+        .patreon-url {
+          display:inline-block;
+          float:left;
+          padding-right:12px;
+        }
+        .mypage-url {
+          display:inline-block;
+          float:left;
+          width:300px
+        }
+
+        .pledge-box {
+          display:inline-block;
+          float:left;
+          width:24px;
+          line-height:48px;
+        }
+
+        .pledge-comment {
+          line-height:48px;
+          float:left;
+          display:inline-block;
+        }
+      }
+
+      .right-text-area {
+        float:left;
+        display:inline-block;
+        width:calc(100% - 148px);
+        textarea {
+          width:100%;
+          border:1px solid $patreonborder;
+          font-weight:100;
+        }
+
+      }
+      .right-content-links{
+        float:left;
+        display:inline-block;
+        width:calc(100% - 148px);
+        line-height:48px;
+        margin-bottom:-48px;
+        .links{
+          li{
+            height:48px;
+            margin-bottom:40px;
+            .icon {
+              line-height:48px;
+              float:left;
+              display:inline-block;
+              margin-right:10px;
+            }
+            .link-url {
+              display:inline-block;
+              float:left;
+              width: 70%;
+              input {
+                width:100%;
+                border:none;
+                border-bottom: 2px solid $patreonborder;
+                color:$patreonnavy;
+                font-weight:100;
+              }
+
+            }
+
+          }
+        }
+
+      }
+
+
+    }
+    .save-btn {
+      height: 48px;
+      float:right;
+      input{
+        background-color:$patreonorange;
+        color:white;
+        line-height:48px;
+        height:48px;
+        border:none;
+        padding:0 26px;
+        border-radius:0;
+        cursor:pointer;
+      }
+    }
+
+  }
+}

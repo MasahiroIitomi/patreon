@@ -1,0 +1,42 @@
+=render partial: "users/sidebar"
+.creator-page-back
+  .edit-header
+    .edit-header__wrapper
+      .comment-left
+        Welcome,
+        =@creator.user.name
+        !
+      .comment-right
+        This is your public profile and creator page.
+      .edit-btn
+        =link_to "EDIT YOUR PAGE"
+  .creator-top-wrapper
+    .image-wrapper
+      .inner-content
+        .inner-content__bottom
+          %h1
+            =@creator.user.name
+            is creating
+            =@creator.creating_things
+    .bottom-line
+      .inner-content
+        .bottom-line-left
+          .terms
+            %ul
+              =link_to "#" do
+                %li Overview
+              =link_to "#" do
+                %li Posts
+              =link_to "#" do
+                %li Community
+        .bottom-line-right
+          =link_to "BECOME A PATRON", "#"
+        .clear
+  .creator-main-contents
+    .main-contents-wrapper
+      .main-contents-left
+        .main-contents-left__info
+
+      .main-contents-center
+      .main-contents-right
+  =render partial: "layouts/footer"

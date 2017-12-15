@@ -1,26 +1,4 @@
-.sidebar
-  =link_to "#", class: "side-icons" do
-    .avatar.icons
-      =fa_icon "smile-o"
-  =link_to "#", class: "side-icons" do
-    .post.icons
-      =fa_icon "pencil-square-o"
-  =link_to "#", class: "side-icons" do
-    .patrons.icons
-      =fa_icon "users"
-  =link_to "#", class: "side-icons" do
-    .notification.icons
-      =fa_icon "bell-o"
-  =link_to "#", class: "side-icons" do
-    .messages.icons
-      =fa_icon "commenting-o"
-  =link_to "#", class: "side-icons" do
-    .invite_creators.icons
-      =fa_icon "paper-plane-o"
-  =link_to "#", class: "side-icons" do
-    .settings.icons
-      =fa_icon "cog"
-
+=render partial: "sidebar"
 .user-main-contents
   .user-main-contents__wrapper
     .inner-container
@@ -31,7 +9,10 @@
             .user__image__avatar
           .user__info
             %h3=current_user.name
-            %p is creating music
+            -if current_user.creator
+              %p
+                is creating
+                =current_user.creator.creating_things
           .user__supporting
             .title
               %h3 SUPPORTING
@@ -88,3 +69,4 @@
             =link_to "#" do
               .link FIND CREATORS
       .clear
+  =render partial: "layouts/footer"

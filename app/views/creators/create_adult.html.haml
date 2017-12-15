@@ -1,0 +1,22 @@
+.create-page-back
+  .contents-wrapper
+    .content
+      .content__left
+        = form_for @creator, url: creators_update_adult_path do |f|
+          .content__left-title
+            %h3 Does your work feature sexual imagery or depictions of nudity?
+          .content__left-form
+            %label
+              Yes, some or all of it.
+              = f.radio_button :adult_content, "true",class: "adult_btn"
+            %label
+              Nope, none of that.
+              =f.radio_button :adult_content, "false",class: "adult_btn"
+          .content__left-submit
+            = f.submit "OK"
+      .content__right
+        .content__right-icon
+          =fa_icon "lightbulb-o"
+        .content__right-guide
+          The world's most beautiful and historically significant art often depicts nudity and sexual expression. We allow nudity and suggestive imagery, as long as it is marked as adult content.
+=render partial: "layouts/footer"

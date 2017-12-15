@@ -1,0 +1,17 @@
+.create-page-back
+  .contents-wrapper
+    .content
+      .content__left
+        = form_for @creator, url: creators_update_genre_path do |f|
+          .content__left-title
+            %h3 Which category fits what you make best?
+          .content__left-form
+            = f.select :genre, Creator.genres.keys.to_a, autofocus: true, class: "select-genre"
+          .content__left-submit
+            = f.submit "OK"
+      .content__right
+        .content__right-icon
+          =fa_icon "lightbulb-o"
+        .content__right-guide
+          This is just an FYI for us, and won’t affect your page.
+=render partial: "layouts/footer"
