@@ -1,3 +1,142 @@
-// Place all the styles related to the creators controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.creator-page-back {
+  margin-top:50px;
+  margin-left:64px;
+  box-sizing: border-box;
+  color:$patreonnavy;
+  .edit-header {
+    height:89px;
+    background-color:white;
+    &__wrapper {
+      max-width: 1120px;
+      margin:0 auto;
+      text-align:center;
+      line-height:89px;
+      font-size:0.9rem;
+      .comment-left {
+        display:inline-block;
+        font-weight:bold;
+      }
+      .comment-right {
+        display:inline-block;
+      }
+      .edit-btn {
+        display:inline-block;
+        a {
+          background-color:$patreonorange;
+          padding: 10px 14px;
+          width:260px;
+          height:39px;
+          text-align:center;
+          line-height:39px;
+          color:white;
+          &:link {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .creator-top-wrapper {
+    height:553px;
+    .image-wrapper {
+      height:480px;
+      background-color:black;
+      .inner-content {
+        width:1120px;
+        margin:0 auto;
+        height:480px;
+        &__bottom {
+          padding-top:352px;
+
+          height:128px;
+            h1 {
+              height:128px;
+              padding:64px 0 0 150px;
+              color:white;
+              font-size: 2.1rem;
+              font-weight:700;
+            }
+        }
+      }
+    }
+    .bottom-line {
+      height:72px;
+      background-color:white;
+      border-bottom:1px solid $patreonborder;
+      .inner-content {
+        max-width:1120px;
+        margin:0 auto;
+        .bottom-line-left {
+          float:left;
+          .terms{
+            margin-left:150px;
+            ul {
+              a {
+                color:$patreonnavy;
+                &:link {
+                  text-decoration:none;
+                }
+                li {
+                  float:left;
+                  height:72px;
+                  line-height:72px;
+                  font-weight:bold;
+                  margin-right:48px;
+                }
+              }
+            }
+          }
+
+        }
+        .bottom-line-right {
+          float:right;
+          height:72px;
+
+          a {
+            background-color:$patreonorange;
+            padding: 16px 24px;
+            width:260px;
+            height:55px;
+            text-align:center;
+            line-height:72px;
+            color:white;
+            &:link {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .creator-main-contents {
+    background-color:$patreongray;
+    .main-contents-wrapper {
+      max-width: 1136px;
+      margin:0 auto;
+      padding:16px 8px;
+
+      .main-contents-left {
+        width: 264px;
+
+        &__info {
+          height:200px;
+          background-color:white;
+          padding:16px;
+          border-bottom:2px solid $patreonborder;
+          box-sizing: border-box;
+
+        }
+      }
+
+      .main-contents-center {
+        width:544px;
+      }
+
+      .main-contents-right {
+        width:264px;
+      }
+    }
+  }
+}
