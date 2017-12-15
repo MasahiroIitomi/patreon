@@ -1,5 +1,5 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:create_genre, :create_adult, :update_genre, :update_adult]
+  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult]
 
 # クリエイターのトップページ
   def home
