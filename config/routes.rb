@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "create/3" => "creators#create_genre"
   get "create/4" => "creators#create_adult"
   get "create/5" => "creators#create_done"
+  patch "/users/update/name" => "users#update_name"
   post "/creators/create" => "creators#create"
   patch "creators/update/genre" => "creators#update_genre"
   patch "creators/update/adult" => "creators#update_adult"
