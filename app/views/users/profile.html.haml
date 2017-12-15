@@ -25,12 +25,17 @@
         .setting-article
           .left-term Creator Page
           .right-content
-            =link_to "#", class: "creator-btn" do
-              .btn
-                EDIT PAGE DETAIL
-              .revert-link
-                =link_to "#" do
-                  Revert my account to patron-only
+            -if current_user.creator
+              =link_to "#", class: "creator-btn" do
+                .btn
+                  EDIT PAGE DETAIL
+                .revert-link
+                  =link_to "#" do
+                    Revert my account to patron-only
+            -else
+              =link_to create_1_path,class: "creator-btn" do
+                .btn
+                  BECOME A CREATOR
         .setting-article
           .left-term Patreon URL
           .right-content
