@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to home_path
+      redirect_to create_2_path
     else
       render :profile
     end
