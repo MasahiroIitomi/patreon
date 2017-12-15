@@ -9,6 +9,14 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
+      redirect_to action: :profile
+    else
+      render :profile
+    end
+  end
+
+  def update_name
+    if current_user.update(user_params)
       redirect_to create_2_path
     else
       render :profile

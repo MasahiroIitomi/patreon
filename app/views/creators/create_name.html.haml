@@ -2,7 +2,7 @@
   .contents-wrapper
     .content
       .content__left
-        = form_for(current_user) do |f|
+        = form_for current_user, url: users_update_name_path do |f|
           .content__left-title
             %h3 Hi there! Just to make sure, is this the name you want displayed on your page?
           .content__left-form
