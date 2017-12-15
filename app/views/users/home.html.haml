@@ -9,7 +9,10 @@
             .user__image__avatar
           .user__info
             %h3=current_user.name
-            %p is creating music
+            -if current_user.creator
+              %p
+                is creating
+                =current_user.creator.creating_things
           .user__supporting
             .title
               %h3 SUPPORTING

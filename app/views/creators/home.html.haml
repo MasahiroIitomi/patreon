@@ -3,7 +3,9 @@
   .edit-header
     .edit-header__wrapper
       .comment-left
-        Welcome, Creator!
+        Welcome,
+        =@creator.user.name
+        !
       .comment-right
         This is your public profile and creator page.
       .edit-btn
@@ -12,7 +14,10 @@
     .image-wrapper
       .inner-content
         .inner-content__bottom
-          %h1 Creator is creating things
+          %h1
+            =@creator.user.name
+            is creating
+            =@creator.creating_things
     .bottom-line
       .inner-content
         .bottom-line-left
