@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   patch "creators/update/adult" => "creators#update_adult"
 
   resources :users, only: [:update]
+  resources :creators, only: [:edit, :update]
 end
