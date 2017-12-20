@@ -8,9 +8,11 @@
 @import "user_setting";
 @import "creator_createpage";
 @import "creators";
+@import "creator_edit";
 // * {
 //   box-sizing:border-box;
 // }
+
 
 header{
   position:fixed;
@@ -424,4 +426,9 @@ footer{
       clear:both;
     }
   }
+}
+
+
+.bold {
+  font-weight:bold;
 }
