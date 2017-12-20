@@ -36,7 +36,51 @@
     .main-contents-wrapper
       .main-contents-left
         .main-contents-left__info
-
+          .patron-count
+            %h6 0
+            %p patrons
+          .per-month-income
+            %h6 $0
+            %p per month
+          .shere-btn
       .main-contents-center
+        .main-contents-center__about
+          =@creator.user.about_user
+        .main-contents-center__joint
+          %h3
+          RECENT POSTS BY
+          =@creator.user.name
+        .main-contents-center__posts
+          .post
+            .post__header
+              .post-avatar
+              .name-and-time
+                .post-name
+                  %h3
+                    =@creator.user.name
+                .post-time
+                  Dec 14 at 5:04am
+              .public-option
+                Patreons only
+              .clear
+            .post__content
+              .post__content__title
+                %h4 POST TITLE
+              .post__content__body
+                HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE
+            .clear
       .main-contents-right
+        .rewards
+          .rewards-title REWARDS
+          .reward
+            .reward-title
+              %h6 Pledge Title
+            .patrons-count
+              XX patrons
+            .reward-body
+              hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge
+            =link_to "#" do
+              .reward-btn
+                GET $XX REWARD
+      .clear
   =render partial: "layouts/footer"

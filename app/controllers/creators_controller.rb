@@ -1,5 +1,5 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult]
+  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done]
 
 # クリエイターのトップページ
   def home
@@ -12,6 +12,7 @@ class CreatorsController < ApplicationController
     @creator = Creator.new(user_id: current_user)
   end
 
+# クリエイターアカウント設定画面
   def create_genre
   end
 

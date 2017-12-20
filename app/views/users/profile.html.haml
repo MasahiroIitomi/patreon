@@ -1,5 +1,6 @@
 .background
-  =render partial: "sidebar"
+  - if current_user.creator
+    =render partial: "sidebar"
   =render partial: "setting_sidebar"
 
   .profile

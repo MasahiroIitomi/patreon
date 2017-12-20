@@ -1,4 +1,5 @@
-=render partial: "sidebar"
+- if current_user.creator
+  =render partial: "sidebar"
 .user-main-contents
   .user-main-contents__wrapper
     .inner-container

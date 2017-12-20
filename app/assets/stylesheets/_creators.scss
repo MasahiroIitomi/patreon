@@ -1,8 +1,12 @@
 .creator-page-back {
-  margin-top:50px;
+  // float:left;
+  width:calc(100% - 64px);
   margin-left:64px;
+  margin-top:50px;
   box-sizing: border-box;
   color:$patreonnavy;
+  // height:calc(100vh - 50px);
+  // overflow:scroll;
   .edit-header {
     height:89px;
     background-color:white;
@@ -112,30 +116,151 @@
 
   .creator-main-contents {
     background-color:$patreongray;
+    padding-bottom:32px;
     .main-contents-wrapper {
       max-width: 1136px;
       margin:0 auto;
       padding:16px 8px;
-
       .main-contents-left {
-        width: 264px;
-
+        width: 280px;
+        float:left;
+        padding:0 8px;
+        box-sizing: border-box;
         &__info {
           height:200px;
           background-color:white;
           padding:16px;
           border-bottom:2px solid $patreonborder;
           box-sizing: border-box;
-
+          h6 {
+            font-size:1.6rem;
+            font-weight:bold;
+            line-height:1.25;
+          }
+          p {
+            font-size:0.8rem;
+          }
+          .patron-count {
+            padding-bottom: 16px;
+          }
         }
       }
 
       .main-contents-center {
         width:544px;
+        padding: 0 8px;
+        float:left;
+        &__about {
+          background-color:white;
+          padding:16px;
+        }
+
+        &__joint {
+          text-align:center;
+          color:$patreonnavygray;
+          font-size:0.8rem;
+          margin: 18px 0;
+        }
+
+        &__posts {
+          .post {
+            padding:16px;
+            background-color:white;
+            &__header {
+              .post-avatar {
+                height:48px;
+                width:48px;
+                background-color:black;
+                border-radius: 50%;
+                margin-right:16px;
+                float:left;
+                margin-bottom:16px;
+              }
+              .name-and-time {
+                float:left;
+                .post-name {
+                  h3 {
+                    font-weight:bold;
+                    font-size:1.1rem;
+                  }
+                }
+                .post-time {
+                  color:$patreonnavygray;
+                  font-size:0.8rem;
+                }
+              }
+              .public-option {
+                font-weight:100;
+                font-size:0.8rem;
+                float:right;
+              }
+            }
+            &__content {
+              &__title {
+                margin-bottom:16px;
+                h4 {
+                  font-size:1.2rem;
+                  font-weight:bold;
+                }
+              }
+              &__body{
+                line-height:1.5;
+                font-weight:300;
+                margin-bottom:16px;
+
+              }
+            }
+          }
+        }
       }
 
       .main-contents-right {
         width:264px;
+        padding:0 8px;
+        float:left;
+        .rewards {
+          background-color:white;
+          .rewards-title {
+            font-size:0.8rem;
+            font-weight:bold;
+            padding:16px;
+            border-bottom:2px solid $patreonborder;
+          }
+          .reward {
+            padding:16px;
+            border-bottom:1px solid $patreonborder;
+            .reward-title {
+              h6 {
+                font-weight:bold;
+              }
+            }
+            .patrons-count {
+              font-size:0.8rem;
+              line-height:1.5;
+              font-weight:100;
+              margin-bottom:16px;
+            }
+            .reward-body {
+              margin-bottom:16px;
+            }
+
+            a {
+              color:$patreonnavy;
+              &:link {
+                text-decoration :none;
+              }
+            }
+            .reward-btn {
+              text-align:center;
+              width:100%;
+              background-color:$patreonborder;
+              line-height:34px;
+              font-size:0.8rem;
+              font-weight:bold;
+              margin-bottom:16px;
+            }
+          }
+        }
       }
     }
   }

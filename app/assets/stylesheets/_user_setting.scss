@@ -1,6 +1,9 @@
 .profile {
   width:calc(100% - 236px);
   margin-left:236px;
+  // float:left;
+  // overflow:scroll;
+  // height:calc(100vh - 50px);
   margin-top:50px;
   background-color:$patreongray;
   box-sizing:border-box;
