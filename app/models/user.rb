@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_one :creator
+  accepts_nested_attributes_for :creator
 end
