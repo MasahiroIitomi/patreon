@@ -1,0 +1,141 @@
+.edit-background
+  .contents-wrapper
+    .edit-links
+      %ul
+        %li
+          =link_to "Settings", "#", remote: true
+        %li
+          =link_to "About", "#", remote: true
+        %li
+          =link_to "Rewards", "#", remote: true
+        %li
+          =link_to "Goals", "#", remote: true
+        %li
+          =link_to "Thanks", "#", remote: true
+        %li
+          =link_to "Payments", "#", remote: true
+        %li
+          =link_to "Posts", "#", remote: true
+    .clear
+
+    / タイトル以下
+    .creator-edit-content
+      .title
+        %h3 Settings
+        %h4 Set your creator details and make a great first impression
+
+      .content
+        = form_for current_user, url: creator_path(@creator) do |f|
+          = f.fields_for :creator, current_user.creator do |af|
+            .edit-content-left
+
+              / Nameの項目
+              .creator-info
+                .article
+                  .article__left
+                    %h3 Name
+                    %p Required
+                  .article__right
+                    = f.text_field :name, autofocus: true, placeholder: "psuedonym, band name, personal name, whatever"
+                .article
+                  .article__left
+                    %h3 What are you creating?
+                    %p Required
+                  .article__right
+                    = af.text_field :creating_things, placeholder: "music videos, water color paintings, This American Life"
+                .article
+                  .article__left
+                    %h3 Which sounds more correct?
+                  .article__right
+                    .is-btn
+                      %label
+                        .radio-btn= af.radio_button :is_or_are, "is"
+                        #{@creator.user.name}
+                        %span.bold is creating
+                        #{@creator.creating_things}
+                    .are-btn
+                      %label
+                        .radio-btn= af.radio_button :is_or_are, "are"
+                        #{@creator.user.name}
+                        %span.bold are creating
+                        #{@creator.creating_things}
+
+              / Profile Pictureの項目
+              .creator-image
+                .article
+                  .article__left
+                    %h3 Profile Picture
+                    %p Your profile picture that will appear in messages, lists, and search
+                  .article__right
+                    %label.avatar-btn
+                      .image-avatar
+                      = f.file_field :avatar_image
+                .article
+                  .article__left
+                    %h3 Cover Image
+                    %p The banner image that will appear on your creator page
+                  .article__right
+                    %label.cover-image-btn
+                      .image-cover
+                      = af.file_field :cover_image
+
+              / Linksの項目
+              .creator-links
+                .article
+                  .article__left
+                    %h3 Links
+                    %p Links to your social accounts
+                  .clear
+                .article
+                  .division.facebook-link
+                    .icon
+                      =fa_icon "facebook"
+                    .link-url
+                      = f.url_field :facebook_url, placeholder: "Your Facebook URL"
+                  .division.youtube-link
+                    .icon
+                      =fa_icon "youtube"
+                    .link-url
+                      = f.url_field :youtube_url, placeholder: "Your YouTube URL"
+                .article
+                  .division.twitch-link
+                    .icon
+                      =fa_icon "twitch"
+                    .link-url
+                      = f.url_field :twitch_url, placeholder: "Your Twetch URL"
+                  .division.twitter-link
+                    .icon
+                      =fa_icon "twitter"
+                    .link-url
+                      = f.url_field :twitter_url, placeholder: "Your Twitter URL"
+
+              / Categoryの項目
+              .creator-category
+                .article
+                  .article__left
+                    %h3 Category
+                    %p Required
+                  .article__right
+                    = af.select :genre, Creator.genres.keys.to_a, class: "select-genre"
+                .article
+                  .article__left
+                    %h3 Patreon URL
+                  .article__right
+                    %span patreon.com/
+                    = f.text_field :mypage_url, placeholder: "username", class: "mypage-url"
+                .article
+                  .article__left
+                    %h3 Adult Content
+                  .article__right
+                    %label.adult-content
+                      .adult-btn
+                        = af.check_box :adult_content
+                      .adult-explanation
+                        %h4 Content contains sexual imagery or nudity.
+                        %p This means the page will not be listed in our site's search results.
+
+            .edit-content-right
+              .save-btn
+                = f.submit "SAVE CHANGES"
+
+        .clear
