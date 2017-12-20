@@ -26,7 +26,7 @@
 
       .content
         = form_for current_user, url: creator_path(@creator) do |f|
-          = f.fields_for :creator, current_user.creator do |af|
+          = f.fields_for :creator do |af|
             .edit-content-left
 
               / Nameの項目
