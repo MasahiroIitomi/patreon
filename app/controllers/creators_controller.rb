@@ -47,6 +47,11 @@ class CreatorsController < ApplicationController
     end
   end
 
+# クリエーター情報編集画面
+  def edit
+    render layout: "creator_edit"
+  end
+
   private
   def set_creator
     @creator = Creator.find_by(user_id: current_user.id)
