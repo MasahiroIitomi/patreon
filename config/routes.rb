@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post "/creators/create" => "creators#create"
   patch "creators/update/genre" => "creators#update_genre"
   patch "creators/update/adult" => "creators#update_adult"
+  get "creators/:id/about" => "creators#edit_about"
+  patch "creators/:id/edit" => "creators#user_update"
 
   resources :users, only: [:update]
   resources :creators, only: [:edit, :update]
