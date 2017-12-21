@@ -1,11 +1,12 @@
 .edit-background {
   margin-top: 50px;
+  padding-bottom: 32px;
   box-sizing:border-box;
   background-color: $patreongray;
   color:$patreonnavy;
   .contents-wrapper {
     max-width:1136px;
-    padding:48px 16px;
+    padding:48px 16px 0;
     margin:0 auto;
     .edit-links {
       text-align: center;
@@ -28,6 +29,7 @@
 
 // タイトル以下
 .creator-edit-content {
+  @include clearfix;
   .title {
     height:82px;
     margin-bottom: 32px;
@@ -39,6 +41,7 @@
     h4 {
       margin: 16px 0 ;
       font-weight:100;
+      color:$patreonnavygray;
     }
   }
 
@@ -89,6 +92,7 @@
       width:100%;
       border:none;
       border-bottom:2px solid $patreonborder;
+      color:$patreonnavy;
     }
 
   }
@@ -229,5 +233,29 @@
     background-color:$patreonorange;
     color:white;
     font-weight:bold;
+  }
+}
+
+
+// Aboutページ
+.about-content {
+  @include clearfix;
+  background-color :white;
+  padding: 24px;
+  margin-bottom: 16px;
+  -webkit-font-smoothing: antialiased;
+  line-height:1.5rem;
+  .text-content {
+    span {
+      font-weight:bold;
+      color:$patreonorange;
+      padding-bottom:12px;
+      display:inline-block;
+    }
+    .about-column {
+      width:100%;
+      margin-top: 20px;
+      border: 1px solid $patreonborder;
+    }
   }
 }
