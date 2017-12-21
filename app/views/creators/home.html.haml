@@ -11,7 +11,7 @@
       .edit-btn
         =link_to "EDIT YOUR PAGE", edit_creator_path(@creator)
   .creator-top-wrapper
-    .image-wrapper
+    .image-wrapper{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
       .inner-content
         .inner-content__bottom
           %h1
