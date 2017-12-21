@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171221003332) do
     t.integer  "earning_privacy"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
-    t.text     "crator_about",    limit: 65535
+    t.text     "creator_about",   limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
