@@ -1,0 +1,20 @@
+.creator-edit-content#edit-content
+  .title
+    %h3 About
+    %h4 Tell your patrons what you're all about
+
+  .content
+    = form_for @creator do |f|
+      .edit-content-left
+        .about-content
+          .text-content
+            %span Who are you? What brought you to Patreon?
+            %p This is the first thing potential patrons will see when they land on your page, so make sure you paint a compelling picture of how they can join you on this epic journey.
+            %br/
+            %p 99.5% of our top-earning creators use this section to thank their fans and patrons.
+            = f.text_area :creator_about, class: "about-column", rows: 15
+
+      .edit-content-right
+        .save-btn
+          = f.submit "SAVE CHANGES"
+
