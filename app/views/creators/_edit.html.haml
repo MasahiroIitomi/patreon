@@ -48,6 +48,7 @@
               .article__right
                 %label.avatar-btn
                   .image-avatar
+                    = image_tag @creator.user.avatar_image.to_s, width: 120, height: 120
                   = f.file_field :avatar_image
             .article
               .article__left
@@ -56,6 +57,7 @@
               .article__right
                 %label.cover-image-btn
                   .image-cover
+                    =image_tag @creator.cover_image.to_s
                   = af.file_field :cover_image
 
           / Linksの項目

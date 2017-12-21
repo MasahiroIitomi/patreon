@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  mount_uploader :avatar_image, ImageUploader
+  mount_uploader :avatar_image, AvatarUploader
 
   has_one :creator
   accepts_nested_attributes_for :creator
