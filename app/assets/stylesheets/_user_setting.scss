@@ -40,6 +40,18 @@
         font-weight:100;
 
         .avatar-image {
+          // display:inline-block;
+          float:left;
+          img {
+            height:48px;
+            width:48px;
+            border-radius:50%;
+            padding-right:10px;
+
+          }
+          .default_avatar {
+            display:none;
+          }
         }
 
         .image-btn {

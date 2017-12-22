@@ -9,7 +9,11 @@
         .setting-article
           .left-term Avatar
           .right-content
-            .avator-image
+            .avatar-image
+              - if current_user.avatar_image
+                = image_tag current_user.avatar_image.to_s
+              - else
+                .default_avatar
             .image-btn
               =f.label :avatar_image, "CHOOSE NEW IMAGE"
               =f.file_field :avatar_image
