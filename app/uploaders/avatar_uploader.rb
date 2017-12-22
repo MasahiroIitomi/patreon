@@ -2,6 +2,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
   process resize_to_fill: [120, 120, "Center"]
+
+  def default_url
+    "default.jpg"
+  end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
