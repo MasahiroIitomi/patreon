@@ -46,7 +46,8 @@
             height:48px;
             width:48px;
             border-radius:50%;
-            padding-right:10px;
+            margin-right:10px;
+            border:1px solid $patreonborder;
 
           }
           .default_avatar {
@@ -77,8 +78,17 @@
         .remove-image-link {
           color:$patreonorange;
           font-weight:bold;
-          &:link {
-            text-decoration:none;
+          float:left;
+          input {
+            float:left;
+            display:inline-block;
+            width:24px;
+            line-height:48px;
+            height:48px;
+          }
+          .remove-image {
+            float:left;
+            line-height:48px;
           }
         }
 
