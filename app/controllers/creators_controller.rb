@@ -1,5 +1,5 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done, :edit, :update, :edit_about]
+  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done, :edit, :update, :edit_about, :destroy]
 
 # クリエイターのトップページ
   def home
@@ -70,6 +70,11 @@ class CreatorsController < ApplicationController
     else
       render action: :edit
     end
+  end
+
+  def destroy
+    @creator.destroy
+    redirect_to home_path
   end
 
 
