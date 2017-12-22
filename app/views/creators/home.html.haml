@@ -11,14 +11,24 @@
       .edit-btn
         =link_to "EDIT YOUR PAGE", edit_creator_path(@creator)
   .creator-top-wrapper
-    .image-wrapper{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
-      .inner-content
-        .inner-content__bottom
-          = image_tag @creator.user.avatar_image.to_s
-          %h1
-            =@creator.user.name
-            is creating
-            =@creator.creating_things
+    - if @creator.cover_image?
+      .image-wrapper{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
+        .inner-content
+          .inner-content__bottom
+            = image_tag @creator.user.avatar_image.to_s
+            %h1
+              =@creator.user.name
+              is creating
+              =@creator.creating_things
+    - else
+      .image-wrapper
+        .inner-content
+          .inner-content__bottom
+            = image_tag @creator.user.avatar_image.to_s
+            %h1
+              =@creator.user.name
+              is creating
+              =@creator.creating_things
     .bottom-line
       .inner-content
         .bottom-line-left

@@ -57,7 +57,8 @@
               .article__right
                 %label.cover-image-btn
                   .image-cover
-                    =image_tag @creator.cover_image.to_s
+                    - if @creator.cover_image?
+                      =image_tag @creator.cover_image.to_s
                   = af.file_field :cover_image
 
           / Linksの項目
