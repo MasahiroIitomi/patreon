@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   patch "creators/:id/edit" => "creators#user_update"
 
   resources :users, only: [:update]
-  resources :creators, only: [:edit, :update]
+  resources :creators, only: [:edit, :update, :destroy]
 end
