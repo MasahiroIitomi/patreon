@@ -1,6 +1,5 @@
 .background
-  - if current_user.creator
-    =render partial: "sidebar"
+  =render partial: "sidebar"
   =render partial: "setting_sidebar"
 
   .profile
@@ -38,7 +37,7 @@
                 .btn
                   EDIT PAGE DETAIL
                 .revert-link
-                  =link_to "#" do
+                  =link_to creator_path(current_user.creator.id), method: :delete do
                     Revert my account to patron-only
             -else
               =link_to create_1_path,class: "creator-btn" do

@@ -1,14 +1,18 @@
-- if current_user.creator
-  =render partial: "sidebar"
+=render partial: "sidebar"
 .user-main-contents
   .user-main-contents__wrapper
     .inner-container
 
       .left-contents
         .user
-          .user__image{style: "background: url(#{image_path current_user.creator.cover_image}); background-size: cover;"}
-            .user__image__avatar
-              = image_tag current_user.avatar_image.to_s
+          - if current_user.creator
+            .user__image{style: "background: url(#{image_path current_user.creator.cover_image}); background-size: cover;"}
+              .user__image__avatar
+                = image_tag current_user.avatar_image.to_s
+          - else
+            .user__image
+              .user__image__avatar
+                = image_tag current_user.avatar_image.to_s
           .user__info
             %h3=current_user.name
             -if current_user.creator
