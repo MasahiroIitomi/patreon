@@ -17,8 +17,11 @@
             .image-btn
               =f.label :avatar_image, "CHOOSE NEW IMAGE"
               =f.file_field :avatar_image
-            =link_to "Remove image", "#", class: "remove-image-link"
-
+            - if current_user.avatar_image?
+              .remove-image-link
+                %label
+                  = f.check_box :remove_avatar_image
+                  .remove-image Remove image
         .setting-article
           .left-term Name
           .right-content
@@ -31,7 +34,7 @@
           .left-term Creator Page
           .right-content
             -if current_user.creator
-              =link_to "#", class: "creator-btn" do
+              =link_to edit_creator_path(@creator), class: "creator-btn" do
                 .btn
                   EDIT PAGE DETAIL
                 .revert-link
