@@ -5,4 +5,5 @@ class Creator < ApplicationRecord
   mount_uploader :cover_image, CoverUploader
 
   belongs_to :user
+  has_many :posts
 end
