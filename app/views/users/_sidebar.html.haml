@@ -1,7 +1,12 @@
 .sidebar
-  =link_to "#", class: "side-icons" do
-    .avatar.icons
-      =fa_icon "smile-o"
+  - if current_user.creator
+    =link_to "/creators/#{@creator.id}/top", class: "side-icons" do
+      .avatar.icons
+        = image_tag current_user.avatar_image.to_s
+  - else
+    =link_to home_path, class: "side-icons" do
+      .avatar.icons
+        = image_tag current_user.avatar_image.to_s
   =link_to "#", class: "side-icons" do
     .post.icons
       =fa_icon "pencil-square-o"

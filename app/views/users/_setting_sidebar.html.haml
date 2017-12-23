@@ -1,9 +1,10 @@
 .setting-sidebar
   %ul
-    %li
-      = link_to "#" do
-        .setting-article
-          EDIT CREATOR PAGE
+    -if current_user.creator
+      %li
+        = link_to edit_creator_path(@creator) do
+          .setting-article
+            EDIT CREATOR PAGE
     %li
       = link_to settings_profile_path do
         .setting-article

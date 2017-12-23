@@ -8,9 +8,11 @@
 @import "user_setting";
 @import "creator_createpage";
 @import "creators";
+@import "creator_edit";
 // * {
 //   box-sizing:border-box;
 // }
+
 
 header{
   position:fixed;
@@ -20,6 +22,18 @@ header{
   background-color: white;
   height:48px;
   border-bottom: 2px solid $patreonborder;
+
+  .exit-edit-btn{
+    line-height:48px;
+    font-weight:bold;
+    color:$patreonnavy;
+    padding-left: 18px;
+    a {
+      &:link {
+        text-decoration:none;
+      }
+    }
+  }
   a {
     display:block;
     &:link{
@@ -412,4 +426,13 @@ footer{
       clear:both;
     }
   }
+}
+
+
+.bold {
+  font-weight:bold;
+}
+
+.orange {
+  color:$patreonorange;
 }

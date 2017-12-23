@@ -8,12 +8,19 @@
         .setting-article
           .left-term Avatar
           .right-content
-            .avator-image
+            .avatar-image
+              - if current_user.avatar_image
+                = image_tag current_user.avatar_image.to_s
+              - else
+                .default_avatar
             .image-btn
               =f.label :avatar_image, "CHOOSE NEW IMAGE"
               =f.file_field :avatar_image
-            =link_to "Remove image", "#", class: "remove-image-link"
-
+            - if current_user.avatar_image?
+              .remove-image-link
+                %label
+                  = f.check_box :remove_avatar_image
+                  .remove-image Remove image
         .setting-article
           .left-term Name
           .right-content
@@ -26,11 +33,11 @@
           .left-term Creator Page
           .right-content
             -if current_user.creator
-              =link_to "#", class: "creator-btn" do
+              =link_to edit_creator_path(@creator), class: "creator-btn" do
                 .btn
                   EDIT PAGE DETAIL
                 .revert-link
-                  =link_to "#" do
+                  =link_to creator_path(current_user.creator.id), method: :delete do
                     Revert my account to patron-only
             -else
               =link_to create_1_path,class: "creator-btn" do

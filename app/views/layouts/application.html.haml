@@ -7,55 +7,5 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header
-      =link_to root_path, class: "header-logo" do
-        .header-left
-          .logo PATREON
-      .header-right
-        .header-right__links
-          %ul.header-right__links
-            - if user_signed_in?
-              %li
-                .icon#modal-icon=fa_icon "bars"
-              %li
-                = link_to home_path do
-                  .icon=fa_icon "home"
-            -else
-              %li
-                =link_to "Log In", new_user_session_path
-              %li
-                =link_to "Sign Up", new_user_registration_path
-              %li
-                =link_to "Explore Creator", "#"
-              %li
-                =link_to "Start My Page", "#"
-        .search-box
-      - if user_signed_in?
-        .menu-modal
-          %ul
-            -if current_user.creator
-              =link_to "#", class: "modal-link" do
-                %li EXPLORE CREATORS
-              =link_to "#", class: "modal-link" do
-                %li YOUR PLEDGES
-              =link_to "#", class: "modal-link" do
-                %li HELP CENTER
-              =link_to destroy_user_session_path, method: :delete, class: "modal-link" do
-                %li LOG OUT
-            -else
-              =link_to "#", class: "modal-link" do
-                %li FINISH PAGE
-              =link_to "#", class: "modal-link" do
-                %li EXPLORE CREATORS
-              =link_to "#", class: "modal-link" do
-                %li YOUR PROFILE
-              =link_to "#", class: "modal-link" do
-                %li YOUR PLEDGES
-              =link_to "#", class: "modal-link" do
-                %li SETTING
-              =link_to "#", class: "modal-link" do
-                %li HELP CENTER
-              =link_to destroy_user_session_path, method: :delete, class: "modal-link" do
-                %li LOG OUT
-
+    =render partial: "layouts/header"
     = yield

@@ -2,9 +2,12 @@ class UsersController < ApplicationController
   before_action :move_to_top
 
   def home
+    @creator = Creator.find_by(user_id: current_user.id)
   end
 
   def profile
+    @creator = Creator.find_by(user_id: current_user.id)
+
   end
 
   def update
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :mypage_url, :about_user, :location, :avatar_image, :pledge_privacy, :twitter_url, :facebook_url, :youtube_url, :twitch_url)
+    params.require(:user).permit(:name, :email, :mypage_url, :about_user, :location, :avatar_image, :pledge_privacy, :twitter_url, :facebook_url, :youtube_url, :twitch_url, :remove_avatar_image)
   end
 
 end

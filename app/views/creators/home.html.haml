@@ -9,15 +9,26 @@
       .comment-right
         This is your public profile and creator page.
       .edit-btn
-        =link_to "EDIT YOUR PAGE"
+        =link_to "EDIT YOUR PAGE", edit_creator_path(@creator)
   .creator-top-wrapper
-    .image-wrapper
-      .inner-content
-        .inner-content__bottom
-          %h1
-            =@creator.user.name
-            is creating
-            =@creator.creating_things
+    - if @creator.cover_image?
+      .image-wrapper{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
+        .inner-content
+          .inner-content__bottom
+            = image_tag @creator.user.avatar_image.to_s
+            %h1
+              =@creator.user.name
+              is creating
+              =@creator.creating_things
+    - else
+      .image-wrapper
+        .inner-content
+          .inner-content__bottom
+            = image_tag @creator.user.avatar_image.to_s
+            %h1
+              =@creator.user.name
+              is creating
+              =@creator.creating_things
     .bottom-line
       .inner-content
         .bottom-line-left
@@ -36,7 +47,52 @@
     .main-contents-wrapper
       .main-contents-left
         .main-contents-left__info
-
+          .patron-count
+            %h6 0
+            %p patrons
+          .per-month-income
+            %h6 $0
+            %p per month
+          .shere-btn
       .main-contents-center
+        .main-contents-center__about
+          =@creator.user.about_user
+        .main-contents-center__joint
+          %h3
+          RECENT POSTS BY
+          =@creator.user.name
+        .main-contents-center__posts
+          .post
+            .post__header
+              .post-avatar
+                = image_tag @creator.user.avatar_image.to_s
+              .name-and-time
+                .post-name
+                  %h3
+                    =@creator.user.name
+                .post-time
+                  Dec 14 at 5:04am
+              .public-option
+                Patreons only
+              .clear
+            .post__content
+              .post__content__title
+                %h4 POST TITLE
+              .post__content__body
+                HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE
+            .clear
       .main-contents-right
+        .rewards
+          .rewards-title REWARDS
+          .reward
+            .reward-title
+              %h6 Pledge Title
+            .patrons-count
+              XX patrons
+            .reward-body
+              hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge
+            =link_to "#" do
+              .reward-btn
+                GET $XX REWARD
+      .clear
   =render partial: "layouts/footer"

@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213044557) do
+ActiveRecord::Schema.define(version: 20171221003332) do
 
   create_table "creators", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.string   "creating_things", null: false
+    t.string   "creating_things",               null: false
     t.string   "is_or_are"
     t.string   "cover_image"
     t.integer  "genre"
     t.integer  "adult_content"
     t.integer  "reward_id"
     t.integer  "earning_privacy"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "creator_about",   limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

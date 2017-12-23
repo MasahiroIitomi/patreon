@@ -9,5 +9,5 @@
             Welcome to Patreon.<br/>
             We're thrilled to have you.
         .done-link
-          =link_to "CONTINUE", creators_top_path
+          =link_to "CONTINUE", "/creators/#{current_user.creator.id}/top"
 =render partial: "layouts/footer"

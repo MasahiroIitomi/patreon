@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Patreon
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+      =link_to "← Exit Editor", "/creators/#{current_user.creator.id}/top", class: "exit-edit-btn"
+    .edit-background
+      .contents-wrapper
+        .edit-links
+          %ul
+            %li
+              =link_to "Settings", edit_creator_path(@creator.id), remote: true
+            %li
+              =link_to "About", "/creators/#{@creator.id}/about", remote: true
+            %li
+              =link_to "Rewards", "#", remote: true
+            %li
+              =link_to "Goals", "#", remote: true
+            %li
+              =link_to "Thanks", "#", remote: true
+            %li
+              =link_to "Payments", "#", remote: true
+            %li
+              =link_to "Posts", "#", remote: true
+        .clear
+        = yield
+    =render "layouts/footer"

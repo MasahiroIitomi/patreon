@@ -1,5 +1,5 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult]
+  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done, :edit, :update, :edit_about, :destroy]
 
 # クリエイターのトップページ
   def home
@@ -12,6 +12,7 @@ class CreatorsController < ApplicationController
     @creator = Creator.new(user_id: current_user)
   end
 
+# クリエイターアカウント設定画面
   def create_genre
   end
 
@@ -46,13 +47,48 @@ class CreatorsController < ApplicationController
     end
   end
 
+# クリエーター情報編集画面
+  def edit
+    render layout: "creator_edit"
+  end
+
+  def edit_about
+    render layout: "creator_edit"
+  end
+
+  def update
+    if @creator.update(creator_params)
+      redirect_to action: :edit
+    else
+      render action: :edit
+    end
+  end
+
+  def user_update
+    if current_user.update(user_params)
+      redirect_to action: :edit
+    else
+      render action: :edit
+    end
+  end
+
+  def destroy
+    @creator.destroy
+    redirect_to home_path
+  end
+
+
   private
   def set_creator
     @creator = Creator.find_by(user_id: current_user.id)
   end
 
   def creator_params
-    params.require(:creator).permit(:creating_things, :genre, :adult_content).merge(user_id: current_user.id)
+    params.require(:creator).permit(:creating_things, :is_or_are, :cover_image, :genre, :adult_content, :reward_id, :earning_privacy, :creator_about).merge(user_id: current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :mypage_url, :about_user, :location, :avatar_image, :pledge_privacy, :twitter_url, :facebook_url, :youtube_url, :twitch_url, creator_attributes: [:id, :creating_things, :is_or_are, :cover_image, :genre, :adult_content, :reward_id, :earning_privacy, :creator_about])
   end
 
 end
