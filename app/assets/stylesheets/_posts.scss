@@ -3,7 +3,7 @@
   position:fixed;
   top:50px;
   left:64px;
-  z-index:2;
+  z-index:3;
   // margin-top:50px;
   float:left;
   height:calc(100vh - 50px);
@@ -28,3 +28,29 @@
     }
   }
 }
+
+.post-background{
+  // ヘッダーやサイドバーなどすべての下に潜り込んでいる状態
+  background-color:$patreongray;
+  width:100%;
+  min-height:100vh;
+  box-sizing:border-box;
+  .post-content-frame {
+    margin-top: 50px;
+    margin-left:176px;
+  }
+}
+
+// ----ここまでがレイアウト共通----
+
+
+// selectアクション
+.post-select-wrapper {
+  padding:16px;
+  .select-without-padding {
+    width:600px;
+    margin:0 auto;
+  }
+}
+
+// ----ここからは白枠の中身を記述するだけでよい----
