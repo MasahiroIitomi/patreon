@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   get "creators/:id/about"      => "creators#edit_about"
   patch "creators/:id/edit"     => "creators#user_update"
   get "post"                    => "posts#select"
-  get "post/:type/edit"               => ""
+  get "post/text/edit"         => "posts#text_create"
 
   resources :users, only: [:update]
   resources :creators, only: [:edit, :update, :destroy]
+  resources :posts, only: [:create]
 end
