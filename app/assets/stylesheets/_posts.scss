@@ -50,7 +50,57 @@
   .select-without-padding {
     width:600px;
     margin:0 auto;
+    // ----ここからは白枠の中身を記述するだけでよい----
+    .content-wrapper {
+      background-color:white;
+      .title {
+        box-sizing:border-box;
+        color:$patreonnavy;
+        font-weight:bold;
+        height:51px;
+        padding:16px;
+        border-bottom:2px solid $patreonborder;
+      }
+      .post-type-wrapper {
+        @include clearfix;
+        li {
+          width:25%;
+          float:left;
+          height:145px;
+          padding:35px 0;
+          text-align: center;
+          border-right:1px solid $patreonborder;
+          border-bottom:1px solid $patreonborder;
+          box-sizing:border-box;
+          &:hover {
+            background-color:$patreongray;
+          }
+          a {
+            color:$patreonnavy;
+            &:link {
+              text-decoration:none;
+            }
+            .icon {
+              height:40px;
+              font-size:2rem;
+            }
+            h6 {
+              height:32px;
+              padding-top:16px;
+              font-size:0.8rem;
+              color:$patreonnavygray;
+              font-weight:bold;
+            }
+          }
+        }
+        .none-border-right {
+          border-right:none;
+        }
+        .none-border-bottom {
+          border-bottom:none;
+        }
+      }
+    }
   }
 }
 
-// ----ここからは白枠の中身を記述するだけでよい----
