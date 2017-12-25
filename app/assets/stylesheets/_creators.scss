@@ -223,8 +223,21 @@
               &__body{
                 line-height:1.5;
                 font-weight:300;
-                margin-bottom:16px;
+              }
+              &__btn {
+                box-sizing:border-box;
+                padding:16px 0;
+                height:51px;
 
+                li {
+                  float:right;
+                  margin-left:32px;
+                  a {
+
+                    color:$patreonnavygray;
+                    font-size:18px;
+                  }
+                }
               }
             }
           }
