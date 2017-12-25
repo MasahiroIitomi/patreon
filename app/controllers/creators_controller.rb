@@ -3,6 +3,7 @@ class CreatorsController < ApplicationController
   before_action :set_creator, only: :home
 # クリエイターのトップページ
   def home
+    @posts = Post.where(creator_id: params[:id]).order(created_at: :desc)
   end
 
   def create_name
