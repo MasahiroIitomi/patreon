@@ -30,11 +30,10 @@ ActiveRecord::Schema.define(version: 20171223083848) do
     t.integer  "creator_id"
     t.integer  "type"
     t.string   "title"
-    t.text     "body",             limit: 65535
-    t.integer  "public_or_patron"
-    t.integer  "rewards_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.text     "body",           limit: 65535
+    t.integer  "public_setting"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

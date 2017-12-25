@@ -5,8 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
       t.integer :type
       t.string :title
       t.text :body
-      t.integer :public_or_patron
-      t.integer :rewards_id, foreign_key: true
+      t.integer :public_setting
       t.timestamps
     end
   end
