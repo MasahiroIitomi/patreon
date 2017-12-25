@@ -54,9 +54,11 @@
             %h6 $0
             %p per month
           .shere-btn
+
       .main-contents-center
-        .main-contents-center__about
-          =@creator.user.about_user
+        -unless @creator.creator_about.blank?
+          .main-contents-center__about
+            =@creator.creator_about
         .main-contents-center__joint
           %h3
           RECENT POSTS BY
