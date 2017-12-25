@@ -13,7 +13,9 @@
 // * {
 //   box-sizing:border-box;
 // }
-
+::-webkit-input-placeholder {
+    color: $patreonfontgray;
+}
 
 header{
   position:fixed;
