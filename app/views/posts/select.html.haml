@@ -1,0 +1,41 @@
+.post-select-wrapper
+  .select-without-padding
+    .content-wrapper
+      .title CHOOSE POST TYPE
+      .post-type-wrapper
+        %ul
+          %li
+            =link_to "#" do
+              .content
+                =fa_icon "font", class: "icon"
+                %h6 TEXT
+          %li
+            =link_to "#" do
+              .content
+                =fa_icon "camera", class: "icon"
+                %h6 IMAGE
+          %li
+            =link_to "#" do
+              .content
+                =fa_icon "youtube-play", class: "icon"
+                %h6 VIDEO
+          %li.none-border-right
+            =link_to "#" do
+              .content
+                =fa_icon "video-camera", class: "icon"
+                %h6 LIVESTREAM
+          %li.none-border-bottom
+            =link_to "#" do
+              .content
+                =fa_icon "headphones", class: "icon"
+                %h6 AUDIO
+          %li.none-border-bottom
+            =link_to "#" do
+              .content
+                =fa_icon "link", class: "icon"
+                %h6 LINK
+          %li.none-border-bottom
+            =link_to "#" do
+              .content
+                =fa_icon "bar-chart", class: "icon"
+                %h6 POLLS
