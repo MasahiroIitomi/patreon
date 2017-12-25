@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   private
   def set_creator
-    @creator = Creator.find_by(user_id: current_user.id)
+    @creatorMyself = Creator.find_by(user_id: current_user.id)
   end
 
   def post_params

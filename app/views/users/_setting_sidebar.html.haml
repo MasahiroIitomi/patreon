@@ -2,7 +2,7 @@
   %ul
     -if current_user.creator
       %li
-        = link_to edit_creator_path(@creator) do
+        = link_to edit_creator_path(@creatorMyself) do
           .setting-article
             EDIT CREATOR PAGE
     %li

@@ -1,15 +1,16 @@
 =render partial: "users/sidebar"
 .creator-page-back
-  .edit-header
-    .edit-header__wrapper
-      .comment-left
-        Welcome,
-        =@creator.user.name
-        !
-      .comment-right
-        This is your public profile and creator page.
-      .edit-btn
-        =link_to "EDIT YOUR PAGE", edit_creator_path(@creator)
+  -if @creator.id == @creatorMyself.id
+    .edit-header
+      .edit-header__wrapper
+        .comment-left
+          Welcome,
+          =@creatorMyself.user.name
+          !
+        .comment-right
+          This is your public profile and creator page.
+        .edit-btn
+          =link_to "EDIT YOUR PAGE", edit_creator_path(@creatorMyself)
   .creator-top-wrapper
     - if @creator.cover_image?
       .image-wrapper{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
