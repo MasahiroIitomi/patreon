@@ -105,3 +105,89 @@
   }
 }
 
+// text-createアクション
+.post-create-wrapper {
+  padding:16px;
+  color:$patreonnavy;
+  .wrapper-without-padding {
+    width:600px;
+    margin:0 auto;
+    padding:16px 0 48px 0;
+    .type-title {
+      box-sizing:border-box;
+      padding:16px 24px;
+      height:51px;
+      background-color:white;
+      font-size:0.8rem;
+      line-height:19px;
+      color:$patreonnavy;
+      border-bottom:2px solid $patreonborder;
+      h6 {
+        display:inline-block;
+        font-weight:bold;
+      }
+    }
+    .text-content {
+      background-color:white;
+      border-bottom: 2px solid $patreonborder;
+      .post-title {
+        padding:32px 24px 16px 24px;
+        input {
+          font-size:1.6rem;
+          color:$patreonnavy;
+          font-weight:bold;
+          border:none;
+        }
+      }
+      .post-body {
+        padding:0 24px 16px 24px;
+        textarea {
+          width:100%;
+          border:none;
+          font-size:16px;
+          color:$patreonnavy;
+
+        }
+      }
+    }
+    .bottom-content {
+      padding:16px 24px;
+      background-color:white;
+      @include clearfix;
+      a {
+        color:$patreonnavy;
+        .delete-btn {
+          float:left;
+          background-color:$patreongray;
+          height:48px;
+          width:52px;
+          text-align: center;
+          line-height:48px;
+          font-size:18px;
+        }
+        .add-file {
+          float:left;
+          background-color:$patreongray;
+          height:48px;
+          width:52px;
+          text-align: center;
+          line-height:48px;
+          font-size:18px;
+          margin-left:10px;
+        }
+      }
+      .submit-btn {
+        float:right;
+        background-color:$patreonorange;
+        color:white;
+        height:48px;
+        text-align: center;
+        line-height:48px;
+        font-size:16px;
+        font-weight:bold;
+        padding:0 16px;
+      }
+
+    }
+  }
+}
