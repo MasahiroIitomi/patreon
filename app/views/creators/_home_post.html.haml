@@ -20,10 +20,11 @@
         =post.body
       .post__content__btn
         %ul
-          %li
-            =link_to "#" do
-              =fa_icon "pencil"
-          %li
-            =link_to "#" do
-              =fa_icon "trash-o"
+          -if current_user.creator.id == post.creator_id
+            %li
+              =link_to "#" do
+                =fa_icon "pencil"
+            %li
+              =link_to "#" do
+                =fa_icon "trash-o"
     .clear
