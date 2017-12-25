@@ -14,9 +14,9 @@
         .edit-links
           %ul
             %li
-              =link_to "Settings", edit_creator_path(@creator.id), remote: true
+              =link_to "Settings", edit_creator_path(@creatorMyself.id), remote: true
             %li
-              =link_to "About", "/creators/#{@creator.id}/about", remote: true
+              =link_to "About", "/creators/#{@creatorMyself.id}/about", remote: true
             %li
               =link_to "Rewards", "#", remote: true
             %li

@@ -1,0 +1,193 @@
+.post-sidebar {
+  background-color:white;
+  position:fixed;
+  top:50px;
+  left:64px;
+  z-index:3;
+  // margin-top:50px;
+  float:left;
+  height:calc(100vh - 50px);
+  width:110px;
+  font-size: 0.8rem;
+  font-weight:700;
+  border-right: 2px solid $patreonborder;
+  li {
+    height:43px;
+    &:hover {
+      background-color: $patreonhover;
+    }
+    a {
+      color:$patreonnavy;
+      &:link {
+        text-decoration:none;
+      }
+      .post-article{
+        padding:12px 16px;
+        line-height:19px;
+      }
+    }
+  }
+}
+
+.post-background{
+  // ヘッダーやサイドバーなどすべての下に潜り込んでいる状態
+  background-color:$patreongray;
+  width:100%;
+  min-height:100vh;
+  box-sizing:border-box;
+  .post-content-frame {
+    margin-top: 50px;
+    margin-left:176px;
+  }
+}
+
+// ----ここまでがレイアウト共通----
+
+
+// selectアクション
+.post-select-wrapper {
+  padding:16px;
+  .select-without-padding {
+    width:600px;
+    margin:0 auto;
+    // ----ここからは白枠の中身を記述するだけでよい----
+    .content-wrapper {
+      background-color:white;
+      .title {
+        box-sizing:border-box;
+        color:$patreonnavy;
+        font-weight:bold;
+        height:51px;
+        padding:16px;
+        border-bottom:2px solid $patreonborder;
+        font-size:0.8rem;
+      }
+      .post-type-wrapper {
+        @include clearfix;
+        li {
+          width:25%;
+          float:left;
+          height:145px;
+          padding:35px 0;
+          text-align: center;
+          border-right:1px solid $patreonborder;
+          border-bottom:1px solid $patreonborder;
+          box-sizing:border-box;
+          &:hover {
+            background-color:$patreongray;
+          }
+          a {
+            color:$patreonnavy;
+            &:link {
+              text-decoration:none;
+            }
+            .icon {
+              height:40px;
+              font-size:2rem;
+            }
+            h6 {
+              height:32px;
+              padding-top:16px;
+              font-size:0.8rem;
+              color:$patreonnavygray;
+              font-weight:bold;
+            }
+          }
+        }
+        .none-border-right {
+          border-right:none;
+        }
+        .none-border-bottom {
+          border-bottom:none;
+        }
+      }
+    }
+  }
+}
+
+// text-createアクション
+.post-create-wrapper {
+  padding:16px;
+  color:$patreonnavy;
+  .wrapper-without-padding {
+    width:600px;
+    margin:0 auto;
+    padding:16px 0 48px 0;
+    .type-title {
+      box-sizing:border-box;
+      padding:16px 24px;
+      height:51px;
+      background-color:white;
+      font-size:0.8rem;
+      line-height:19px;
+      color:$patreonnavy;
+      border-bottom:2px solid $patreonborder;
+      h6 {
+        display:inline-block;
+        font-weight:bold;
+      }
+    }
+    .text-content {
+      background-color:white;
+      border-bottom: 2px solid $patreonborder;
+      .post-title {
+        padding:32px 24px 16px 24px;
+        input {
+          font-size:1.6rem;
+          color:$patreonnavy;
+          font-weight:bold;
+          border:none;
+        }
+      }
+      .post-body {
+        padding:0 24px 16px 24px;
+        textarea {
+          width:100%;
+          border:none;
+          font-size:16px;
+          color:$patreonnavy;
+
+        }
+      }
+    }
+    .bottom-content {
+      padding:16px 24px;
+      background-color:white;
+      @include clearfix;
+      a {
+        color:$patreonnavy;
+        .delete-btn {
+          float:left;
+          background-color:$patreongray;
+          height:48px;
+          width:52px;
+          text-align: center;
+          line-height:48px;
+          font-size:18px;
+        }
+        .add-file {
+          float:left;
+          background-color:$patreongray;
+          height:48px;
+          width:52px;
+          text-align: center;
+          line-height:48px;
+          font-size:18px;
+          margin-left:10px;
+        }
+      }
+      .submit-btn {
+        float:right;
+        background-color:$patreonorange;
+        color:white;
+        height:48px;
+        text-align: center;
+        line-height:48px;
+        font-size:16px;
+        font-weight:bold;
+        padding:0 16px;
+      }
+
+    }
+  }
+}

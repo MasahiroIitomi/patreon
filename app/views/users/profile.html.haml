@@ -33,7 +33,7 @@
           .left-term Creator Page
           .right-content
             -if current_user.creator
-              =link_to edit_creator_path(@creator), class: "creator-btn" do
+              =link_to edit_creator_path(@creatorMyself), class: "creator-btn" do
                 .btn
                   EDIT PAGE DETAIL
                 .revert-link

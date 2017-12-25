@@ -4,7 +4,7 @@
     %h4 Set your creator details and make a great first impression
 
   .content
-    = form_for current_user, url: "/creators/#{@creator.id}/edit" do |f|
+    = form_for current_user, url: "/creators/#{@creatorMyself.id}/edit" do |f|
       = f.fields_for :creator do |af|
         .edit-content-left
 
@@ -29,15 +29,15 @@
                 .is-btn
                   %label
                     .radio-btn= af.radio_button :is_or_are, "is"
-                    #{@creator.user.name}
+                    #{@creatorMyself.user.name}
                     %span.bold is creating
-                    #{@creator.creating_things}
+                    #{@creatorMyself.creating_things}
                 .are-btn
                   %label
                     .radio-btn= af.radio_button :is_or_are, "are"
-                    #{@creator.user.name}
+                    #{@creatorMyself.user.name}
                     %span.bold are creating
-                    #{@creator.creating_things}
+                    #{@creatorMyself.creating_things}
 
           / Profile Pictureの項目
           .creator-image
@@ -48,7 +48,7 @@
               .article__right
                 %label.avatar-btn
                   .image-avatar
-                    = image_tag @creator.user.avatar_image.to_s, width: 120, height: 120
+                    = image_tag @creatorMyself.user.avatar_image.to_s, width: 120, height: 120
                   = f.file_field :avatar_image
             .article
               .article__left
@@ -57,8 +57,8 @@
               .article__right
                 %label.cover-image-btn
                   .image-cover
-                    - if @creator.cover_image?
-                      =image_tag @creator.cover_image.to_s
+                    - if @creatorMyself.cover_image?
+                      =image_tag @creatorMyself.cover_image.to_s
                   = af.file_field :cover_image
 
           / Linksの項目

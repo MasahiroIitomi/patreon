@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   before_action :move_to_top
 
   def home
-    @creator = Creator.find_by(user_id: current_user.id)
+    @creatorMyself = Creator.find_by(user_id: current_user.id)
   end
 
   def profile
-    @creator = Creator.find_by(user_id: current_user.id)
+    @creatorMyself = Creator.find_by(user_id: current_user.id)
 
   end
 

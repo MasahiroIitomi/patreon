@@ -1,0 +1,29 @@
+- @posts.each do |post|
+  .post
+    .post__header
+      .post-avatar
+        = image_tag post.creator.user.avatar_image.to_s
+      .name-and-time
+        .post-name
+          %h3
+            =post.creator.user.name
+        .post-time
+          =post.created_at.strftime('%b %d at %I:%M%p')
+      .public-option
+        Patreons only
+      .clear
+    .post__content
+      .post__content__title
+        %h4
+          =post.title
+      .post__content__body
+        =post.body
+      .post__content__btn
+        %ul
+          %li
+            =link_to "#" do
+              =fa_icon "pencil"
+          %li
+            =link_to "#" do
+              =fa_icon "trash-o"
+    .clear

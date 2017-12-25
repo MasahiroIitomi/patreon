@@ -1,8 +1,9 @@
 class CreatorsController < ApplicationController
-  before_action :set_creator, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done, :edit, :update, :edit_about, :destroy]
-
+  before_action :set_creator_myself, only: [:home, :create_genre, :create_adult, :update_genre, :update_adult, :create_done, :edit, :update, :edit_about, :destroy]
+  before_action :set_creator, only: :home
 # クリエイターのトップページ
   def home
+    @posts = Post.where(creator_id: params[:id]).order(created_at: :desc)
   end
 
   def create_name
@@ -80,7 +81,11 @@ class CreatorsController < ApplicationController
 
   private
   def set_creator
-    @creator = Creator.find_by(user_id: current_user.id)
+    @creator = Creator.find_by(id: params[:id])
+  end
+
+  def set_creator_myself
+    @creatorMyself = Creator.find_by(user_id: current_user.id)
   end
 
   def creator_params
