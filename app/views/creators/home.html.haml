@@ -65,25 +65,7 @@
           RECENT POSTS BY
           =@creator.user.name
         .main-contents-center__posts
-          .post
-            .post__header
-              .post-avatar
-                = image_tag @creator.user.avatar_image.to_s
-              .name-and-time
-                .post-name
-                  %h3
-                    =@creator.user.name
-                .post-time
-                  Dec 14 at 5:04am
-              .public-option
-                Patreons only
-              .clear
-            .post__content
-              .post__content__title
-                %h4 POST TITLE
-              .post__content__body
-                HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE HOGE
-            .clear
+          =render "creators/home_post"
       .main-contents-right
         .rewards
           .rewards-title REWARDS
