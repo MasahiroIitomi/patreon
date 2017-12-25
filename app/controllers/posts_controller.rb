@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.type = :text
+    @post.types = :text
     if @post.save
       redirect_to "/creators/#{@post.creator_id}/top"
     else
