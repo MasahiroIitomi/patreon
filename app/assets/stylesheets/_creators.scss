@@ -33,6 +33,7 @@
           text-align:center;
           line-height:39px;
           color:white;
+          font-weight:bold;
           &:link {
             text-decoration: none;
           }
@@ -66,7 +67,7 @@
           }
           h1 {
             height:128px;
-            padding:64px 0 0 150px;
+            padding:64px 0 0 166px;
             color:white;
             font-size: 2.1rem;
             font-weight:700;
@@ -84,10 +85,10 @@
         .bottom-line-left {
           float:left;
           .terms{
-            margin-left:150px;
+            margin-left:166px;
             ul {
               a {
-                color:$patreonnavy;
+                color:$patreonnavygray;
                 &:link {
                   text-decoration:none;
                 }
@@ -104,9 +105,10 @@
 
         }
         .bottom-line-right {
+          padding-right: 16px;
           float:right;
           height:72px;
-
+          @include clearfix;
           a {
             background-color:$patreonorange;
             padding: 16px 24px;
@@ -115,6 +117,7 @@
             text-align:center;
             line-height:72px;
             color:white;
+            font-weight:bold;
             &:link {
               text-decoration: none;
             }
@@ -131,6 +134,7 @@
       max-width: 1136px;
       margin:0 auto;
       padding:16px 8px;
+
       .main-contents-left {
         width: 280px;
         float:left;
@@ -149,6 +153,8 @@
           }
           p {
             font-size:0.8rem;
+            font-weight:bold;
+            color:$patreonnavygray;
           }
           .patron-count {
             padding-bottom: 16px;
@@ -170,6 +176,7 @@
           color:$patreonnavygray;
           font-size:0.8rem;
           margin: 18px 0;
+          font-weight:bold;
         }
 
         &__posts {
@@ -204,6 +211,7 @@
                 .post-time {
                   color:$patreonnavygray;
                   font-size:0.8rem;
+                  font-weight:bold;
                 }
               }
               .public-option {
