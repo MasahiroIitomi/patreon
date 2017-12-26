@@ -10,7 +10,7 @@ class CreatorsController < ApplicationController
   end
 
   def create_creating_things
-    @creator = Creator.new(user_id: current_user)
+    @creatorMyself = Creator.new(user_id: current_user)
   end
 
 # クリエイターアカウント設定画面
@@ -33,7 +33,7 @@ class CreatorsController < ApplicationController
   end
 
   def update_genre
-    if @creator.update(creator_params)
+    if @creatorMyself.update(creator_params)
       redirect_to action: :create_adult
     else
       render :create_genre
@@ -41,7 +41,7 @@ class CreatorsController < ApplicationController
   end
 
   def update_adult
-    if @creator.update(creator_params)
+    if @creatorMyself.update(creator_params)
       redirect_to action: :create_done
     else
       render :update_adult
@@ -58,7 +58,7 @@ class CreatorsController < ApplicationController
   end
 
   def update
-    if @creator.update(creator_params)
+    if @creatorMyself.update(creator_params)
       redirect_to action: :edit
     else
       render action: :edit
@@ -74,7 +74,7 @@ class CreatorsController < ApplicationController
   end
 
   def destroy
-    @creator.destroy
+    @creatorMyself.destroy
     redirect_to home_path
   end
 
