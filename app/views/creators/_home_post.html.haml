@@ -25,6 +25,6 @@
               =link_to "#" do
                 =fa_icon "pencil"
             %li
-              =link_to "#" do
+              =link_to post_path(post.id), method: :delete, data: {confirm: "削除しますか？"} do
                 =fa_icon "trash-o"
     .clear
