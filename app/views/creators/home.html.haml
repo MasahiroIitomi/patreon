@@ -19,8 +19,9 @@
             = image_tag @creator.user.avatar_image.to_s
             %h1
               =@creator.user.name
-              is creating
-              =@creator.creating_things
+              %span
+                is creating
+                =@creator.creating_things
     - else
       .image-wrapper
         .inner-content
@@ -28,8 +29,9 @@
             = image_tag @creator.user.avatar_image.to_s
             %h1
               =@creator.user.name
-              is creating
-              =@creator.creating_things
+              %span
+                is creating
+                =@creator.creating_things
     .bottom-line
       .inner-content
         .bottom-line-left
