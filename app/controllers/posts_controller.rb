@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_creator, only: [:select, :text_create]
+  before_action :set_creator, only: [:select, :text_create, :destroy]
 
   def select
   end
@@ -16,6 +16,12 @@ class PostsController < ApplicationController
     else
       render :text_create
     end
+  end
+
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect_to "/creators/#{@creatorMyself.id}/top"
   end
 
   private
