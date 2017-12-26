@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   patch "creators/update/adult" => "creators#update_adult"
   get "creators/:id/about"      => "creators#edit_about"
   patch "creators/:id/edit"     => "creators#user_update"
-  get "post"                    => "posts#select"
-  get "post/text/edit"         => "posts#text_create"
+  get "posts"                    => "posts#select"
+  get "posts/text/edit"         => "posts#text_create"
 
   resources :users, only: [:update]
   resources :creators, only: [:edit, :update, :destroy]
-  resources :posts, only: [:create]
+  resources :posts, only: [:create, :destroy]
 end
