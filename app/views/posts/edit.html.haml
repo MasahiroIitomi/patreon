@@ -1,0 +1,20 @@
+.post-create-wrapper
+  .wrapper-without-padding
+    =form_for @post do |f|
+      .type-title
+        =fa_icon "font"
+        %h6 TEXT
+      .text-content
+        .post-title
+          =f.text_field :title, placeholder: "Post title (required)"
+        .post-body
+          =f.text_area :body, placeholder: "Honestly, write anything - your patrons will love it.", rows: 10
+        .tag
+      .bottom-content
+        =link_to "#" do
+          .delete-btn
+            =fa_icon "trash-o"
+        =link_to "#" do
+          .add-file
+            =fa_icon "paperclip"
+        =f.submit "PUBLISH NOW", class: "submit-btn"
