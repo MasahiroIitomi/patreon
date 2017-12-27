@@ -16,7 +16,7 @@
               %label
                 .search-icon=fa_icon "search"
                 %input{type: "text", id: "creator-search-field", name: "keyword", placeholder: "Search"}
-            .user-search-result
+            #creator-search-result
         -else
           %li
             =link_to "Log In", new_user_session_path
