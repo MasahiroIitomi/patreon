@@ -37,4 +37,7 @@ $(document).on('turbolinks:load', function() {
       console.log('creator検索に失敗しました。');
     });
   });
+  $('body').on('click', function(){
+    $('.searching-creator-box').hide();
+  });
 });
