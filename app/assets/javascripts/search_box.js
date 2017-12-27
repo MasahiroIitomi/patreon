@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     var html = `<div class="searching-creator-box">
                   <a href="/creators/${creator.id}/top">
                     <div class="search-left">
-                      <img src="${creator.image}">
+                      <img src="${creator.image}" onerror="this.src='https://s3-ap-northeast-1.amazonaws.com/patreon-image/uploads/default.jpg';">
                     </div>
                     <div class="search-right">
                       <h6>${creator.name}</h6>
