@@ -18,6 +18,14 @@
     font-weight:normal;
 }
 
+input:focus {
+  outline:none;
+}
+
+textarea:focus {
+  outline:none;
+}
+
 header{
   position:fixed;
   top:0px;
