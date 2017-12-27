@@ -14,8 +14,8 @@
           %li
             .creator-search-box
               %label
-                =fa_icon "search"
-                =form_tag "#", id: "creator-search-field", name: "keyword", placeholder: "Search"
+                .search-icon=fa_icon "search"
+                %input{type: "text", id: "creator-search-field", name: "keyword", placeholder: "Search"}
             .user-search-result
         -else
           %li
