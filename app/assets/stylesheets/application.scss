@@ -15,6 +15,7 @@
 // }
 ::-webkit-input-placeholder {
     color: $patreonfontgray;
+    font-weight:normal;
 }
 
 header{
@@ -74,7 +75,7 @@ header{
         li {
           font-family: 'America',sans-serif;
           float:right;
-          margin:0 14px;
+          margin:0 8px;
           .icon {
             font-size:25px;
             &:hover {
@@ -88,6 +89,31 @@ header{
             &:link{
               text-decoration:none;
             }
+          }
+          // クリエイター検索ボックス
+          .creator-search-box {
+            box-sizing: border-box;
+            @include clearfix;
+            padding:0 16px;
+            border-right:2px solid $patreonborder;
+            border-left: 2px solid $patreonborder;
+            .search-icon {
+              float:left;
+              width:16px;
+            }
+            input {
+              box-sizing: border-box;
+              float:left;
+              height:32px;
+              width:112px;
+              margin:8px 16px;
+              line-height:32px;
+              font-size:1rem;
+              border:none;
+            }
+          }
+          .user-search-result {
+            box-sizing:border-box;
           }
         }
       }
