@@ -15,6 +15,15 @@
 // }
 ::-webkit-input-placeholder {
     color: $patreonfontgray;
+    font-weight:normal;
+}
+
+input:focus {
+  outline:none;
+}
+
+textarea:focus {
+  outline:none;
 }
 
 header{
@@ -74,7 +83,7 @@ header{
         li {
           font-family: 'America',sans-serif;
           float:right;
-          margin:0 14px;
+          margin:0 8px;
           .icon {
             font-size:25px;
             &:hover {
@@ -87,6 +96,69 @@ header{
             font-size:0.8rem;
             &:link{
               text-decoration:none;
+            }
+          }
+          // クリエイター検索ボックス
+          .creator-search-box {
+            box-sizing: border-box;
+            @include clearfix;
+            padding:0 16px;
+            border-right:2px solid $patreonborder;
+            border-left: 2px solid $patreonborder;
+            .search-icon {
+              float:left;
+              width:16px;
+            }
+            input {
+              box-sizing: border-box;
+              float:left;
+              height:32px;
+              width:112px;
+              margin:8px 16px;
+              line-height:32px;
+              font-size:1rem;
+              border:none;
+            }
+          }
+          #creator-search-result {
+            box-sizing:border-box;
+            border-top: 2px solid $patreonborder;
+            .searching-creator-box{
+              @include clearfix;
+              border-bottom:2px solid $patreonborder;
+              border-right:2px solid $patreonborder;
+              border-left:2px solid $patreonborder;
+              background-color:white;
+              box-sizing:border-box;
+              height:50px;
+              a{
+                .search-left{
+                  height:50px;
+                  float:left;
+                  line-height:50px;
+                  padding:10px;
+                  box-sizing:border-box;
+                  img {
+                    height:30px;
+                    weight:30px;
+                    border-radius: 50%;
+                  }
+                }
+                .search-right {
+                  float:left;
+                  height:50px;
+                  h6 {
+                    height:50%;
+                    line-height:23px;
+                    font-weight:bold;
+                  }
+                  p {
+                    height:50%;
+                    line-height:23px;
+                    font-weight:normal;
+                  }
+                }
+              }
             }
           }
         }

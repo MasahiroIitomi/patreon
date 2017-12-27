@@ -11,6 +11,12 @@
           %li
             = link_to home_path do
               .icon=fa_icon "home"
+          %li
+            .creator-search-box
+              %label
+                .search-icon=fa_icon "search"
+                %input{type: "text", id: "creator-search-field", name: "keyword", placeholder: "Search"}
+            #creator-search-result
         -else
           %li
             =link_to "Log In", new_user_session_path
