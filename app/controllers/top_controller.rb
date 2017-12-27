@@ -1,11 +1,14 @@
 class TopController < ApplicationController
-  before_action :move_to_user_home
+  before_action :move_to_user_home, except: [:search]
 
   def home
   end
 
   def search
-    @creators = Creator.user.where('name LIKE(?)', "%#{params[:keyword]}%")
+    # binding.pry
+    @creators = []
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(5)
+    @users.map{|user| @creators << user.creator}
     respond_to do |format|
       format.html
       format.json
