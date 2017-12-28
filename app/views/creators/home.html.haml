@@ -58,7 +58,7 @@
           .per-month-income
             %h6 $0
             %p per month
-          .follow-shere-btn
+          .follow-share-btn
             / 「現在のユーザーがクリエイターアカウントを持っていて且つ、そのページが自分自身のページ」"ではない"とき表示。自分自身をフォローできないようにする。
             -unless current_user.creator && @creator.id == @creatorMyself.id
               -if Follow.find_by(user_id: current_user.id, creator_id: @creator.id)
