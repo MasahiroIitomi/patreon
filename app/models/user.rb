@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   has_one :creator
   accepts_nested_attributes_for :creator
+  has_many :creator
 end
