@@ -20,7 +20,7 @@
         =post.body
       .post__content__btn
         %ul
-          -if current_user.creator.id == post.creator_id
+          -if current_user.creator && current_user.creator.id == post.creator_id
             %li
               =link_to "/posts/text/#{post.id}/edit/#{post.types}" do
                 =fa_icon "pencil"

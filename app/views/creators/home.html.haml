@@ -1,6 +1,6 @@
 =render partial: "users/sidebar"
 .creator-page-back
-  -if @creator.id == @creatorMyself.id
+  -if current_user.creator && @creator.id == @creatorMyself.id
     .edit-header
       .edit-header__wrapper
         .comment-left
