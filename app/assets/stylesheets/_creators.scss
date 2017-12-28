@@ -162,6 +162,21 @@
           .patron-count {
             padding-bottom: 16px;
           }
+          .per-month-income {
+            padding-bottom:24px;
+          }
+          .follow-share-btn {
+            a {
+              padding:6px 10px;
+              background-color:$patreonborder;
+              color:$patreonnavy;
+              font-size:0.8rem;
+              font-weight:bold;
+              &:link {
+                text-decoration:none;
+              }
+            }
+          }
         }
       }
 
