@@ -46,8 +46,10 @@
         .bottom-line-right
           =link_to "BECOME A PATRON", "#"
         .clear
+
   .creator-main-contents
     .main-contents-wrapper
+
       .main-contents-left
         .main-contents-left__info
           .patron-count
@@ -56,7 +58,17 @@
           .per-month-income
             %h6 $0
             %p per month
-          .shere-btn
+          .follow-shere-btn
+            / 「現在のユーザーがクリエイターアカウントを持っていて且つ、そのページが自分自身のページ」"ではない"とき表示。自分自身をフォローできないようにする。
+            -unless current_user.creator && @creator.id == @creatorMyself.id
+              -if Follow.find_by(user_id: current_user.id, creator_id: @creator.id)
+                =link_to "/follows/#{@creator.id}/destroy", method: :delete do
+                  %span=fa_icon "check"
+                  FOLLOWING
+              -else
+                =link_to "/follows/#{@creator.id}/create", method: :post do
+                  %span=fa_icon "plus"
+                  FOLLOW
 
       .main-contents-center
         -unless @creator.creator_about.blank?
