@@ -266,3 +266,22 @@
     }
   }
 }
+
+// Rewardsページ
+.rewards-content {
+  @include clearfix;
+  background-color :white;
+  padding: 24px;
+  margin-bottom: 16px;
+  -webkit-font-smoothing: antialiased;
+  line-height:1.5rem;
+  .text-content {
+    padding-bottom:16px;
+    span {
+      font-weight:bold;
+      color:$patreonorange;
+      padding-bottom:12px;
+      display:inline-block;
+    }
+  }
+}
