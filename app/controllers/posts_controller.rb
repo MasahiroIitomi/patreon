@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def select
   end
 
+# テキストの投稿作成画面
   def text_create
     @post = Post.new(creator_id: current_user.creator.id)
   end
