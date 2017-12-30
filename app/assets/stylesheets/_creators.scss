@@ -290,11 +290,16 @@
                 font-weight:bold;
               }
             }
-            .patrons-count {
+            .patrons-price-count {
               font-size:0.8rem;
               line-height:1.5;
               font-weight:100;
               margin-bottom:16px;
+            }
+            .reward-image {
+              img {
+                max-width:232px;
+              }
             }
             .reward-body {
               margin-bottom:16px;
