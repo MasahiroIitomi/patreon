@@ -40,6 +40,60 @@
                       .reward-edit-btn
                         EDIT
 
+                  / 個別reward編集フォーム
+                  .reward-edit
+                    = form_for myReward do |af|
+                      .title-area
+                        %h5 EDIT TIER
+                      .form-area
+                        .article
+                          .article__left
+                            %h3 Tier price
+                            %p Required
+                          .article__right
+                            .price-mark $
+                            =af.text_field :price, placeholder: "1", class: "price-field"
+                        .article
+                          .article__left
+                            %h3 Tier title
+                            %p Required
+                          .article__right
+                            =af.text_field :title, placeholder: "(e.g. Unicorns)"
+                        .article
+                          .article__left
+                            %h3 Tier</br>description
+                          .article__right
+                            =af.text_area :description, placeholder: "(e.g. Unicorns are the ultimate tier.)", class: "tier-description"
+                        .article
+                          .article__left
+                            %h3 Tier image
+                          .article__right
+                            %label.tier-image
+                              .image-btn
+                                SELECT TIER IMAGE
+                              =af.file_field :image, class: "image-input"
+                        .article
+                          .article__left
+                            %h3 Patron limit
+                          .article__right
+                            .patron-limit
+                              =fa_icon "user", class: "patron-icon"
+                              =af.text_field :patron_limit, placeholder: "1", class: "patron-limit-form"
+                              .patron-limit-text patrons can get this tier
+                        .article
+                          .article__left
+                            %h3 Shipping</br>address
+                          .article__right
+                            %label
+                              .address-check
+                                =af.check_box :ask_address
+                              .address-text
+                                Ask for shipping address during pledge checkout
+                      .btn-area
+                        =af.submit "SAVE TIER", class: "save-tier-btn"
+                        .cancel-btn
+                          CANCEL
+
 
           / 新規作成フォーム
           .new-tier-content
