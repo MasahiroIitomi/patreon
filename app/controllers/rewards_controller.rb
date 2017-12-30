@@ -8,7 +8,7 @@ class RewardsController < ApplicationController
   def create
     @reward = Reward.new(reward_params)
     if @reward.save
-      redirect_to "/creators/#{@reward.creator.id}/rewards"
+      redirect_to edit_creator_path(current_user.creator.id)
     else
       render :edit
     end
