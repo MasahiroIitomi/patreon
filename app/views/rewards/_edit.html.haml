@@ -11,9 +11,62 @@
           %p The best rewards are easy to fulfill and let you stay focused on your craft. We recommend creating at least one reward to give your fans more incentive to become patrons. And since your patrons pay on a monthly basis, we recommend creating recurring rewards.
           %br/
           %p Creators with rewards are 1.5x more likely to receive pledges.
-        .my-tiers
-        .new-tier-form
-        .create-tier-btn
+
+        .tiers-content
+          .my-tiers
+
+          .new-tier-content
+            = form_for @reward do |f|
+              .title-area
+                %h5 NEW TIER
+              .form-area
+                .article
+                  .article__left
+                    %h3 Tier price
+                    %p Required
+                  .article__right
+                    .price-mark $
+                    =f.text_field :price, placeholder: "1", class: "price-field"
+                .article
+                  .article__left
+                    %h3 Tier title
+                    %p Required
+                  .article__right
+                    =f.text_field :title, placeholder: "(e.g. Unicorns)"
+                .article
+                  .article__left
+                    %h3 Tier</br>description
+                  .article__right
+                    =f.text_area :description, placeholder: "(e.g. Unicorns are the ultimate tier.)", class: "tier-description"
+                .article
+                  .article__left
+                    %h3 Tier image
+                  .article__right
+                    %label.tier-image
+                      .image-btn
+                        SELECT TIER IMAGE
+                      =f.file_field :image, class: "image-input"
+                .article
+                  .article__left
+                    %h3 Patron limit
+                  .article__right
+                    .patron-limit
+                      =fa_icon "user", class: "patron-icon"
+                      =f.text_field :patron_limit, placeholder: "1", class: "patron-limit-form"
+                      .patron-limit-text patrons can get this tier
+                .article
+                  .article__left
+                    %h3 Shipping</br>address
+                  .article__right
+                    %label
+                      .address-check
+                        =f.check_box :ask_address
+                      .address-text
+                        Ask for shipping address during pledge checkout
+              .btn-area
+                =f.submit "SAVE TIER", class: "save-tier-btn"
+
+          .create-tier-btn
 
     .edit-content-right
 
