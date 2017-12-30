@@ -13,8 +13,35 @@
           %p Creators with rewards are 1.5x more likely to receive pledges.
 
         .tiers-content
-          .my-tiers
+          - if current_user.creator.rewards
+            .my-tiers
+              .my-tiers__title
+                My tiers (
+                =@myRewards.count
+                )
+              .my-tiers__content
+                - @myRewards.each do |myReward|
+                  / 個別のreward
+                  .reward
+                    .reward-inner
+                      .reward-title
+                        =myReward.title
+                      .reward-price-patron
+                        %span $
+                        =myReward.price
+                        per month・
+                        0
+                        patrons
+                      .reward-publish
+                        Published
+                        =myReward.created_at.strftime('%b %d, %Y')
+                      .reward-description
+                        =myReward.description
+                      .reward-edit-btn
+                        EDIT
 
+
+          / 新規作成フォーム
           .new-tier-content
             = form_for @reward do |f|
               .title-area
@@ -65,8 +92,11 @@
                         Ask for shipping address during pledge checkout
               .btn-area
                 =f.submit "SAVE TIER", class: "save-tier-btn"
-
-          .create-tier-btn
+                .cancel-btn
+                  CANCEL
+          / 新規作成フォーム表示ボタン
+          .create-tier-btn#create-tier-btn
+            CREATE NEW TIER
 
     .edit-content-right
 
