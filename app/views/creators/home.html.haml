@@ -92,7 +92,7 @@
                 =reward.price
                 or more per month・
                 XX patrons
-              -if reward.image
+              - if reward.image?
                 .reward-image
                   =image_tag reward.image.to_s
               .reward-body
