@@ -81,26 +81,27 @@
         .main-contents-center__posts
           =render "creators/home_post"
       .main-contents-right
-        .rewards
-          .rewards-title REWARDS
-          - @rewards.each do |reward|
-            .reward
-              .reward-title
-                %h6=reward.title
-              .patrons-price-count
-                $
-                =reward.price
-                or more per month・
-                XX patrons
-              - if reward.image?
-                .reward-image
-                  =image_tag reward.image.to_s
-              .reward-body
-                =reward.description
-              =link_to "#" do
-                .reward-btn
-                  GET $
+        -if @rewards.exists?
+          .rewards
+            .rewards-title REWARDS
+            - @rewards.each do |reward|
+              .reward
+                .reward-title
+                  %h6=reward.title
+                .patrons-price-count
+                  $
                   =reward.price
-                  REWARD
+                  or more per month・
+                  XX patrons
+                - if reward.image?
+                  .reward-image
+                    =image_tag reward.image.to_s
+                .reward-body
+                  =reward.description
+                =link_to "#" do
+                  .reward-btn
+                    GET $
+                    =reward.price
+                    REWARD
       .clear
   =render partial: "layouts/footer"
