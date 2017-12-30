@@ -94,7 +94,6 @@
       border-bottom:2px solid $patreonborder;
       color:$patreonnavy;
     }
-
   }
 }
 
@@ -282,6 +281,107 @@
       color:$patreonorange;
       padding-bottom:12px;
       display:inline-block;
+    }
+  }
+  .tiers-content {
+    box-sizing:border-box;
+    padding-top:24px;
+    .my-tiers {
+
+    }
+
+    .new-tier-content {
+      border: 2px solid $patreonborder;
+
+      .title-area {
+        padding:16px;
+        border-bottom:2px solid $patreonborder;
+        h5 {
+          font-size:0.8rem;
+          font-weight:bold;
+        }
+      }
+
+      .form-area {
+        padding:24px;
+        border-bottom :2px solid $patreonborder;
+        .article {
+          line-height:1.5;
+          width:100%;
+          &__left {
+
+          }
+          &__right {
+            input {
+              width:100%;
+            }
+            .price-mark {
+              width:20px;
+              display:inline-block;
+              float:left;
+            }
+            .price-field {
+              width:calc(100% - 20px);
+              display:inline-block;
+            }
+            .tier-description {
+              width:100%;
+              box-sizing:border-box;
+              border:2px solid $patreonborder;
+              padding:16px;
+            }
+            .tier-image {
+              .image-btn {
+                background-color:$patreonborder;
+                font-weight:bold;
+                font-size:0.8rem;
+                padding:10px 14px;
+                display:inline-block;
+              }
+              .image-input {
+                display:none;
+              }
+            }
+            .patron-limit {
+              .patron-icon {
+                width:20px;
+                display:inline-block;
+              }
+              .patron-limit-form {
+                width:calc((100% - 30px) / 2);
+              }
+              .patron-limit-text {
+                width:calc(calc(100% - 30px)/ 2);
+                display:inline-block;
+                float:right;
+              }
+            }
+            .address-check {
+              width: 20px;
+              float: left;
+              margin-right:10px;
+            }
+            .address-text {
+              float:left;
+              width:calc(100% - 30px);
+            }
+
+          }
+        }
+      }
+
+      .btn-area {
+        padding:24px;
+        .save-tier-btn {
+          background-color: $patreonorange;
+          font-size: 0.8rem;
+          font-weight:bold;
+          border-radius: none;
+          border:none;
+          color:white;
+          padding:10px 14px;
+        }
+      }
     }
   }
 }
