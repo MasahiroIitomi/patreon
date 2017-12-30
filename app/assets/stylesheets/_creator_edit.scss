@@ -442,6 +442,19 @@
     // My tiersの各編集フォーム
     .reward-edit {
       @include tierform;
+      .btn-area {
+        .delete-btn {
+          float:right;
+          line-height:39px;
+          a {
+            color:$patreonfontgray;
+            font-size:18px;
+            &:link {
+              text-decoration:none;
+            }
+          }
+        }
+      }
     }
 
     // 新規作成フォーム表示ボタン
