@@ -286,12 +286,56 @@
   .tiers-content {
     box-sizing:border-box;
     padding-top:24px;
+
+    // My Tiers一覧
     .my-tiers {
+      box-sizing: border-box;
+      &__title {
+        padding-bottom:24px;
+        padding-left: 8px;
+        font-weight:bold;
+      }
+      &__content {
+        .reward {
+          border:2px solid $patreonborder;
+          padding: 24px;
+          margin-bottom:16px;
+          .reward-inner {
+            position:relative;
+
+            .reward-title {
+              font-weight:bold;
+            }
+            .reward-price-patron {
+
+            }
+            .reward-publish {
+              font-size:0.8rem;
+              color:#62D6A3;
+            }
+            .reward-discription {
+              margin-top:8px;
+            }
+            .reward-edit-btn {
+              display:inline-block;
+              position: absolute;
+              top:0;
+              right:0;
+              color:$patreonorange;
+              font-weight:bold;
+              cursor:pointer;
+            }
+
+          }
+        }
+      }
 
     }
-
+    // 新規作成フォーム
     .new-tier-content {
       border: 2px solid $patreonborder;
+      margin-bottom: 16px;
+      // display:none;
 
       .title-area {
         padding:16px;
@@ -380,8 +424,32 @@
           border:none;
           color:white;
           padding:10px 14px;
+          line-height:1.5;
+        }
+        .cancel-btn {
+          background-color:$patreonborder;
+          font-weight:bold;
+          font-size:0.8rem;
+          padding:10px 14px;
+          display:inline-block;
+          line-height:1.5;
+          height:19px;
+          margin-left: 12px;
         }
       }
+    }
+
+    // 新規作成フォーム表示ボタン
+    .create-tier-btn {
+      box-sizing: border-box;
+      background-color:$patreonborder;
+      font-weight:bold;
+      font-size:0.8rem;
+      padding:10px 14px;
+      display:inline-block;
+      cursor:pointer;
+      height:36px;
+      line-height :16px;
     }
   }
 }
