@@ -15,6 +15,15 @@ class RewardsController < ApplicationController
     end
   end
 
+  def update
+    @reward = Reward.find_by(id: params[:id])
+    if @reward.update(reward_params)
+      redirect_to edit_creator_path(current_user.creator.id)
+    else
+      render :edit
+    end
+  end
+
   private
   def reward_params
     params.require(:reward).permit(:price, :title, :description, :image, :patron_limit, :ask_address).merge(creator_id: current_user.creator.id)
