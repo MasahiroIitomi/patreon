@@ -439,6 +439,11 @@
       }
     }
 
+    // My tiersの各編集フォーム
+    .reward-edit {
+      @include tierform;
+    }
+
     // 新規作成フォーム表示ボタン
     .create-tier-btn {
       box-sizing: border-box;
