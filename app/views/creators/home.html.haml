@@ -83,15 +83,24 @@
       .main-contents-right
         .rewards
           .rewards-title REWARDS
-          .reward
-            .reward-title
-              %h6 Pledge Title
-            .patrons-count
-              XX patrons
-            .reward-body
-              hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge hoge
-            =link_to "#" do
-              .reward-btn
-                GET $XX REWARD
+          - @rewards.each do |reward|
+            .reward
+              .reward-title
+                %h6=reward.title
+              .patrons-price-count
+                $
+                =reward.price
+                or more per month・
+                XX patrons
+              -if reward.image
+                .reward-image
+                  =image_tag reward.image.to_s
+              .reward-body
+                =reward.description
+              =link_to "#" do
+                .reward-btn
+                  GET $
+                  =reward.price
+                  REWARD
       .clear
   =render partial: "layouts/footer"

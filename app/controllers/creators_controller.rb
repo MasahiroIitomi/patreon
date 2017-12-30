@@ -4,6 +4,7 @@ class CreatorsController < ApplicationController
 # クリエイターのトップページ
   def home
     @posts = Post.where(creator_id: params[:id]).order(created_at: :desc)
+    @rewards = Reward.where(creator_id: params[:id]).order(created_at: :desc)
   end
 
   def create_name
