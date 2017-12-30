@@ -93,6 +93,10 @@
                         =af.submit "SAVE TIER", class: "save-tier-btn"
                         .cancel-btn
                           CANCEL
+                        .delete-btn
+                          =link_to reward_path(myReward.id), method: :delete do
+                            =fa_icon "trash-o"
+
 
 
           / 新規作成フォーム
