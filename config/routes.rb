@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "posts/text/:id/edit/text"       => "posts#edit"
   post "follows/:creator_id/create"    => "follows#create"
   delete "follows/:creator_id/destroy" => "follows#destroy"
+  get "bePatron/:creator_id"           => "pledges#be_patron"
 
   resources :users, only: [:update]
   resources :creators, only: [:edit, :update, :destroy]
