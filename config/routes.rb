@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   patch "creators/update/genre"        => "creators#update_genre"
   patch "creators/update/adult"        => "creators#update_adult"
   get "creators/:id/about"             => "creators#edit_about"
+  get "creators/:id/rewards"           => "rewards#edit"
   patch "creators/:id/edit"            => "creators#user_update"
   get "posts"                          => "posts#select"
   get "posts/text/edit"                => "posts#text_create"
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
   resources :users, only: [:update]
   resources :creators, only: [:edit, :update, :destroy]
   resources :posts, only: [:create, :destroy, :update]
+  resources :rewards, only: [:create, :update, :destroy]
 end

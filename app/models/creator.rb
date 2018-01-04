@@ -7,4 +7,6 @@ class Creator < ApplicationRecord
   belongs_to :user
   has_many :posts
   has_many :follows
+  has_many :rewards
+  has_many :pledges
 end

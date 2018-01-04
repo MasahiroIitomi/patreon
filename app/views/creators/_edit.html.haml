@@ -56,9 +56,10 @@
                 %p The banner image that will appear on your creator page
               .article__right
                 %label.cover-image-btn
-                  .image-cover
-                    - if @creatorMyself.cover_image?
-                      =image_tag @creatorMyself.cover_image.to_s
+                  - if @creatorMyself.cover_image?
+                    =image_tag @creatorMyself.cover_image.to_s
+                  -else
+                    .image-cover
                   = af.file_field :cover_image
 
           / Linksの項目

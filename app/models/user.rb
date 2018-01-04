@@ -12,4 +12,6 @@ class User < ApplicationRecord
   has_one :creator
   accepts_nested_attributes_for :creator
   has_many :follows
+  has_many :pledges
+  has_many :rewards, through: :pledges
 end
