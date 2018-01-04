@@ -11,7 +11,7 @@ class RewardsController < ApplicationController
     if @reward.save
       redirect_to edit_creator_path(current_user.creator.id)
     else
-      render :edit
+      redirect_to edit_creator_path(current_user.creator.id)
     end
   end
 
@@ -20,7 +20,7 @@ class RewardsController < ApplicationController
     if @reward.update(reward_params)
       redirect_to edit_creator_path(current_user.creator.id)
     else
-      render :edit
+      redirect_to edit_creator_path(current_user.creator.id)
     end
   end
 
