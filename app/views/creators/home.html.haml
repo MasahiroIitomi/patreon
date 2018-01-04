@@ -98,7 +98,7 @@
                     =image_tag reward.image.to_s
                 .reward-body
                   =reward.description
-                =link_to "#" do
+                =link_to "/bePatron/#{@creator.id}" do
                   .reward-btn
                     GET $
                     =reward.price
