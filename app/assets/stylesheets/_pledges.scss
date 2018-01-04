@@ -1,3 +1,11 @@
-// Place all the styles related to the pledges controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.pledges-frame {
+  padding: 50px 0 0 64px;
+  box-sizing: border-box;
+  .pledges-content-back {
+    background-color: $patreongray;
+    .pledges-content-frame {
+      max-width:1136px;
+      padding:0 16px;
+    }
+  }
+}
