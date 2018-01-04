@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resources :creators, only: [:edit, :update, :destroy]
   resources :posts, only: [:create, :destroy, :update]
   resources :rewards, only: [:create, :update, :destroy]
+  resources :pledges, only: [:create]
 end
