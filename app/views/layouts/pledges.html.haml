@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Patreon
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    =render "layouts/header"
+    =render "users/sidebar"
+    / headerとfooterを除いた部分
+    .pledges-frame
+      .pledges-content-back
+        / max-widthを設定した中身
+        .pledges-content-frame
+          = yield
+      =render "layouts/footer"
+
