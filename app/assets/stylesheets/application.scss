@@ -27,6 +27,10 @@ textarea:focus {
   outline:none;
 }
 
+.show{
+  display:block;
+}
+
 header{
   position:fixed;
   top:0px;
@@ -193,10 +197,6 @@ header{
         }
       }
     }
-}
-
-.show{
-  display:block;
 }
 
 .top-wrapper {
