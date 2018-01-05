@@ -1,0 +1,55 @@
+.be-patron-edit-content
+  .be-patron-header
+    %h1 Choose your reward & unlock posts
+  .content
+    .content__left
+      .setprice-background
+        .explanation
+          Rewards are
+          =@creator.user.name
+          's thank you for being a passionate fan:
+        .pledges
+          = form_for @pledge do |f|
+            - @rewards.each do |reward|
+              .reward
+                %label
+                  .reward__left
+                    =f.radio_button :reward_id, reward.id, class: "reward-btn"
+                  .reward__right
+                    .reward-title
+                      =reward.title
+                    .reward-price
+                      $
+                      =reward.price
+                      + per month
+                    - if reward.image?
+                      .reward-image
+                        =image_tag reward.image.to_s
+                    .reward-body
+                      =reward.description
+                    .pledge-price
+                      .price-setting
+                        .mark
+                          $
+                        =f.text_field :price, value: "#{reward.price}"
+                      .continue-btn
+                        =f.submit "CONTINUE",class: "submit-btn"
+
+    .content__right
+      .patron-creator-info
+        - if @creator.cover_image?
+          .cover-image{style: "background: url(#{image_path @creator.cover_image}); background-size: cover;"}
+        - else
+          .cover-image
+        .creator-avatar
+          =image_tag @creator.user.avatar_image.to_s
+        .creator-infomation
+          =link_to "#{@creator.user.name}", "/creators/#{@creator.id}/top", class: "creator-link"
+          .patron-count
+            0 patrons
+          .creator-comment
+            Thank you for joining
+            =@creator.user.name
+            on their journey to create
+            =@creator.creating_things
+
