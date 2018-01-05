@@ -9,7 +9,7 @@
           =@creator.user.name
           's thank you for being a passionate fan:
         .pledges
-          = form_for @pledge do |f|
+          = form_for @pledge, url: {action: 'checkout'} do |f|
             - @rewards.each do |reward|
               .reward
                 %label
@@ -31,7 +31,7 @@
                       .price-setting
                         .mark
                           $
-                        =f.text_field :price, value: "#{reward.price}"
+                        =f.text_field :price, value: "#{reward.price}", class: "price-form"
                       .continue-btn
                         =f.submit "CONTINUE",class: "submit-btn"
 
