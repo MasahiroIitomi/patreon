@@ -13,6 +13,7 @@
   }
 }
 
+// be_patronアクションのview
 .be-patron-edit-content {
   color:$patreonnavy;
   @include clearfix;
@@ -152,6 +153,146 @@
             line-height:24px;
           }
 
+        }
+      }
+    }
+  }
+}
+
+// checkoutアクションのview
+.checkout-content {
+  color:$patreonnavy;
+  @include clearfix;
+  .checkout-header {
+    text-align:center;
+    font-size:1.3rem;
+    padding:48px 0 32px 0;
+    a {
+      color:$patreonnavy;
+      font-weight:bold;
+      &:link {
+        text-decoration:none;
+      }
+      &:hover {
+        text-decoration:underline;;
+      }
+
+    }
+  }
+  .content {
+    &__left {
+      box-sizing:border-box;
+      margin-right: 8px;
+      float:left;
+      width:calc(calc(100% - 16px) / 3 * 2);
+      .confirm-content {
+        background-color:white;
+        padding:24px;
+
+        .pledge-content {
+          padding-bottom :32px;
+          border-bottom: 2px solid $patreongray;
+
+          &__title {
+            font-weight:bold;
+            margin-bottom: 16px;
+            input {
+              cursor:pointer;
+              border:none;
+              color:$patreonorange;
+            }
+          }
+          &__detail {
+          }
+        }
+
+        .reward-content {
+          padding-top: 32px;
+          &__title {
+            font-weight:bold;
+            margin-bottom:16px;
+            input {
+              cursor:pointer;
+              border:none;
+              color:$patreonorange;
+            }
+          }
+          &__detail {
+            &--title {
+              padding-bottom:12px;
+            }
+            &--price {
+              padding-bottom:16px;
+            }
+            &--image {
+              padding-bottom:16px;
+              img {
+                max-height:200px;
+                max-width:500px;
+              }
+            }
+            &--description {
+              padding-bottom:16px;
+            }
+          }
+        }
+      }
+      .warning {
+        padding:16px;
+        color:$patreonnavygray;
+      }
+    }
+    &__right {
+      box-sizing:border-box;
+      margin-left: 8px;
+      float:left;
+      width: calc(calc(100% - 16px) / 3);
+      .payment-info {
+        background-color:white;
+        padding:24px;
+        h3 {
+          padding:8px 0;
+          font-weight:bold;
+        }
+        .charge-date {
+          padding-top:8px;
+          padding-bottom:16px;
+          @include clearfix;
+          &__date {
+            float:left;
+            display:inline-block;
+          }
+          &__price {
+            float:right;
+            display:inline-block;
+          }
+        }
+        .charge-introduction {
+          line-height:1.5;
+          padding-bottom:16px;
+        }
+        .add-card-link {
+          text-align:center;
+          margin:16px 0;
+          a {
+            color:$patreonorange;
+            font-weight:bold;
+            &:link {
+              text-decoration:none;
+            }
+          }
+        }
+        .pledge-btn {
+          .checkout-btn {
+            cursor:pointer;
+            background-color:$patreonorange;
+            padding:18px 24px;
+            color:white;
+            font-weight:bold;
+            text-align:center;
+            border:none;
+            width:100%;
+          }
         }
       }
     }
