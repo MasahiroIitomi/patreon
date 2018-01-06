@@ -1,0 +1,64 @@
+.checkout-content
+  .checkout-header
+    Confirm your pledge to
+    =link_to '/creators/#{@creator.id}/top', class: "creator-link" do
+      =@creator.user.name
+  .content
+    =form_for @pledge do |f|
+      =f.hidden_field :price
+      =f.hidden_field :reward_id
+      =f.hidden_field :creator_id
+      .content__left
+        .confirm-content
+          / 上段
+          .pledge-content
+            .pledge-content__title
+              Your pledge to
+              =@creator.user.name
+              =f.submit "Edit", name: "back"
+            .pledge-content__detail
+              =number_to_currency(@pledge.price)
+              per month
+          / 下段
+          .reward-content
+            .reward-content__title
+              Your reward
+              =f.submit "Edit", name: "back"
+            .reward-content__detail
+              .reward-content__detail--title
+                =@pledge.reward.title
+              .reward-content__detail--price
+                =number_to_currency(@pledge.reward.price)
+                + per month
+              .reward-content__detail--image
+                - if @pledge.reward.image?
+                  .reward-image
+                    =image_tag @pledge.reward.image.to_s
+              .reward-content__detail--description
+                =@pledge.reward.description
+        .warning Patreon does not issue refunds on behalf of creators.
+
+      .content__right
+        .payment-info
+          %h3 Summary
+          .charge-date
+            .charge-date__date
+              Support for
+              =Date.today.strftime('%B')
+            .charge-date__price
+              =number_to_currency(@pledge.price)
+          .charge-introduction
+            You will be charged
+            =number_to_currency(@pledge.price)
+            on
+            =Date.today.next_month.strftime('%B')
+            1st and then the 1st of each month going forward.</br>
+            </br>
+            You can cancel or edit your pledge at any time. By making this pledge, you agree to Patreon's Terms of Use.
+          .add-card-link
+            =link_to "#" do
+              Add a new credit card
+          .pledge-btn
+            =f.submit "CONFIRM AND PLEDGE", class: "checkout-btn"
+
+
